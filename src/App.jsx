@@ -1,10 +1,14 @@
-import Home from './sessions/home'
+
+import Home from './sessions/home';
+import MobileNavigator from './sessions/mobileNavigator';
 
 function App() {
-
   return (
-    <Home/>
-  )
+    <>
+      <MobileNavigator />
+      <Home />
+    </>
+  );
 }
 
 export default App
