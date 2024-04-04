@@ -9,10 +9,6 @@ import { Container, Subtitle, DifferentialsContainer, Differential, Differential
 
 const Home = () => {
 
-  const handleClickContactButton = () => {
-
-  }
-
   return (
     <Container id='home'>
       <Subtitle>Transformando sonhos em código</Subtitle>

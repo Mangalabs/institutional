@@ -15,3 +15,15 @@ export const form = {
   negativeFeedbackMessage: '#770000',
   label: "#fff"
 }
+
+export const team = {
+  cardBorder: '#bbb',
+  descriptionBackground: '#eee',
+  descriptionFontColor: '#222'
+}
+
+export const techs = {
+  cardBorder: '#bbb',
+  cardBackground: '#ffffffaa',
+  descriptionFontColor: '#222'
+}
