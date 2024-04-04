@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { slide as Menu } from "react-burger-menu";
+import { HashLink as Link } from 'react-router-hash-link';
 
 import { global, mobileNavigator } from "../../styles/colors";
 
@@ -40,7 +41,7 @@ export const MenuContainer = styled(Menu)`
   padding-top: 2em;
 `;
 
-export const MenuItem = styled.a`
+export const MenuItem = styled(Link)`
   color: ${mobileNavigator.itemFont};
 
   font-size: 1.15em;

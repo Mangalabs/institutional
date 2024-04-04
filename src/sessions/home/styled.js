@@ -10,9 +10,7 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
 
-  width: 100%;
-
-  padding-top: 4em;
+  padding: 4em 2em 4em 2em;
 `;
 
 export const Subtitle = styled.h2`
@@ -44,7 +42,7 @@ export const DifferentialTittle = styled.h3`
   margin: 0.2em 0;
 `;
 
-export const DifferentialDescription = styled.text`
+export const DifferentialDescription = styled.p`
   font-size: 1em,;
   font-weight: 500;
   text-align: center;

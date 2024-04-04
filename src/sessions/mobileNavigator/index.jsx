@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Container, Title, MenuContainer, MenuItem } from './styled'
 
 function MobileNavigator() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
@@ -11,8 +12,12 @@ function MobileNavigator() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const showSettings = (event) => {
-    event.preventDefault();
+  const handleStateChange = (state) => {
+    setIsMenuOpen(state.isOpen)
+  }
+
+  const closeMenu = () => {
+    setIsMenuOpen(false)
   }
 
   var styles = {
@@ -51,11 +56,17 @@ function MobileNavigator() {
         <Title>Mangalab</Title>
       </Container>
 
-      <MenuContainer styles={styles} pageWrapId={"page-wrap"} outerContainerId={"outer-container"} width={150} right >
-        <MenuItem id="home" href="/">Home</MenuItem>
-        <MenuItem id="about" href="/about">About</MenuItem>
-        <MenuItem id="contact" href="/contact">Contact</MenuItem>
-        <MenuItem onClick={showSettings} href="">Settings</MenuItem>
+      <MenuContainer
+        styles={styles}
+        pageWrapId={"page-wrap"}
+        outerContainerId={"outer-container"}
+        width={150}
+        right
+        isOpen={isMenuOpen}
+        onStateChange={(state) => handleStateChange(state)}
+      >
+        <MenuItem to={"#home"} smooth onClick={() => closeMenu()}>Home</MenuItem>
+        <MenuItem to={"#contact"} smooth onClick={() => closeMenu()}>Contato</MenuItem>
       </MenuContainer>
     </>
   );

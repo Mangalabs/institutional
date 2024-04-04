@@ -9,3 +9,9 @@ export const mobileNavigator = {
   background: "#555",
   itemFont: "#111",
 };
+
+export const form = {
+  positiveFeedbackMessage: '#007700',
+  negativeFeedbackMessage: '#770000',
+  label: "#fff"
+}
