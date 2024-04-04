@@ -19,7 +19,7 @@ import { Container, Subtitle, SessionDescription, TechsContainer, Tech, TechLogo
 
 function MobileNavigator() {
   return (
-    <Container>
+    <Container id='techs'>
       <Subtitle>Tecnologias</Subtitle>
       <SessionDescription>Estamos sempre atualizados com as melhores tecnologias do mercado</SessionDescription>
 

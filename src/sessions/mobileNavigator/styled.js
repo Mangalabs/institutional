@@ -14,6 +14,8 @@ export const Container = styled.div`
 
   position: fixed;
 
+  z-index: 1000;
+
   transition: 0.5s;
   background-color: ${(props) => props.transparent ? mobileNavigator.topBarTransparent : mobileNavigator.topBar};
 `;

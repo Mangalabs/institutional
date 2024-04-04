@@ -66,6 +66,8 @@ function MobileNavigator() {
         onStateChange={(state) => handleStateChange(state)}
       >
         <MenuItem to={"#home"} smooth onClick={() => closeMenu()}>Home</MenuItem>
+        <MenuItem to={"#team"} smooth onClick={() => closeMenu()}>Time</MenuItem>
+        <MenuItem to={"#techs"} smooth onClick={() => closeMenu()}>Tecnologias</MenuItem>
         <MenuItem to={"#contact"} smooth onClick={() => closeMenu()}>Contato</MenuItem>
       </MenuContainer>
     </>
