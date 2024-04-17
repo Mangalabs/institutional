@@ -1,6 +1,7 @@
 export const global = {
   background: "#777",
-  title: '#222'
+  title: '#222',
+  font:"'Roboto', sans-serif"
 };
 
 export const mobileNavigator = {

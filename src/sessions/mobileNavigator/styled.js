@@ -23,7 +23,7 @@ export const Container = styled.div`
 export const Title = styled.h1`
   font-size: 1.5em;
   font-weight: 700;
-  color: ${global.title};
+  color: white; //ajuste necessario, ajustar depois
 
   padding-left: 1em;
 `;
@@ -31,23 +31,18 @@ export const Title = styled.h1`
 export const MenuContainer = styled(Menu)`
   align-self: flex-end;
   background-color: ${mobileNavigator.background};
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   width: 100%;
   height: 50%;
-
   padding-top: 2em;
 `;
 
 export const MenuItem = styled(Link)`
   color: ${mobileNavigator.itemFont};
-
   font-size: 1.15em;
   font-weight: 700;
-
   margin-bottom: 1em;
 `;

@@ -43,4 +43,8 @@ export const Container = styled.div`
   &:hover ${InnerContainer} {
     transform: rotateY(180deg);
   }
+  
+  @media (min-width: 768px) {
+    width: 15em;
+  }
 `;

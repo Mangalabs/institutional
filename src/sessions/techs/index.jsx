@@ -16,99 +16,105 @@ import postgresqlLogo from '../../assets/techs/postgresql.png';
 import vueLogo from '../../assets/techs/vue.png';
 
 import { Container, Subtitle, SessionDescription, TechsContainer, Tech, TechLogo, TechName } from './styled'
+import Slider from "react-styled-carousel";
 
 function MobileNavigator() {
+  const isWeb = window.innerWidth >= 768;
+
   return (
     <Container id='techs'>
       <Subtitle>Tecnologias</Subtitle>
       <SessionDescription>Estamos sempre atualizados com as melhores tecnologias do mercado</SessionDescription>
 
       <TechsContainer>
-        <Tech>
-          <TechLogo src={jsLogo} />
-          <TechName>Javascript</TechName>
-        </Tech>
+        <Slider showDots={false}  
+       cardsToShow={ isWeb ? 7 : 1}>
+          <Tech>
+            <TechLogo src={jsLogo} />
+            <TechName>Javascript</TechName>
+          </Tech>
 
-        <Tech>
-          <TechLogo src={tsLogo} />
-          <TechName>Typescript</TechName>
-        </Tech>
+          <Tech>
+            <TechLogo src={tsLogo} />
+            <TechName>Typescript</TechName>
+          </Tech>
 
-        <Tech>
-          <TechLogo src={reactLogo} />
-          <TechName>React</TechName>
+          <Tech>
+            <TechLogo src={reactLogo} />
+            <TechName>React</TechName>
 
-        </Tech>
-        <Tech>
-          <TechLogo src={reactLogo} />
-          <TechName>React-native</TechName>
-        </Tech>
+          </Tech>
+          <Tech>
+            <TechLogo src={reactLogo} />
+            <TechName>React-native</TechName>
+          </Tech>
 
-        <Tech>
-          <TechLogo src={goLogo} />
-          <TechName>GO</TechName>
-        </Tech>
+          <Tech>
+            <TechLogo src={goLogo} />
+            <TechName>GO</TechName>
+          </Tech>
 
-        <Tech>
-          <TechLogo src={awsLogo} />
-          <TechName>AWS</TechName>
-        </Tech>
+          <Tech>
+            <TechLogo src={awsLogo} />
+            <TechName>AWS</TechName>
+          </Tech>
 
-        <Tech>
-          <TechLogo src={firebaseLogo} />
-          <TechName>Firebase</TechName>
-        </Tech>
+          <Tech>
+            <TechLogo src={firebaseLogo} />
+            <TechName>Firebase</TechName>
+          </Tech>
 
-        <Tech>
-          <TechLogo src={graphqlLogo} />
-          <TechName>GraphQL</TechName>
-        </Tech>
+          <Tech>
+            <TechLogo src={graphqlLogo} />
+            <TechName>GraphQL</TechName>
+          </Tech>
 
-        <Tech>
-          <TechLogo src={flutterLogo} />
-          <TechName>Flutter</TechName>
-        </Tech>
+          <Tech>
+            <TechLogo src={flutterLogo} />
+            <TechName>Flutter</TechName>
+          </Tech>
 
-        <Tech>
-          <TechLogo src={laravelLogo} />
-          <TechName>Laravel</TechName>
-        </Tech>
+          <Tech>
+            <TechLogo src={laravelLogo} />
+            <TechName>Laravel</TechName>
+          </Tech>
 
-        <Tech>
-          <TechLogo src={nestLogo} />
-          <TechName>Nest</TechName>
-        </Tech>
+          <Tech>
+            <TechLogo src={nestLogo} />
+            <TechName>Nest</TechName>
+          </Tech>
 
-        <Tech>
-          <TechLogo src={nodeLogo} />
-          <TechName>Node</TechName>
-        </Tech>
+          <Tech>
+            <TechLogo src={nodeLogo} />
+            <TechName>Node</TechName>
+          </Tech>
 
-        <Tech>
-          <TechLogo src={nuxtLogo} />
-          <TechName>Nuxt</TechName>
-        </Tech>
+          <Tech>
+            <TechLogo src={nuxtLogo} />
+            <TechName>Nuxt</TechName>
+          </Tech>
 
-        <Tech>
-          <TechLogo src={pythonLogo} />
-          <TechName>Python</TechName>
-        </Tech>
+          <Tech>
+            <TechLogo src={pythonLogo} />
+            <TechName>Python</TechName>
+          </Tech>
 
-        <Tech>
-          <TechLogo src={postgresqlLogo} />
-          <TechName>PostgresQL</TechName>
-        </Tech>
+          <Tech>
+            <TechLogo src={postgresqlLogo} />
+            <TechName>PostgresQL</TechName>
+          </Tech>
 
-        <Tech>
-          <TechLogo src={vueLogo} />
-          <TechName>Vue</TechName>
-        </Tech>
+          <Tech>
+            <TechLogo src={vueLogo} />
+            <TechName>Vue</TechName>
+          </Tech>
 
-      
-        <Tech>
-          <TechLogo src={nextLogo} />
-          <TechName>Next</TechName>
-        </Tech>
+
+          <Tech>
+            <TechLogo src={nextLogo} />
+            <TechName>Next</TechName>
+          </Tech>
+        </Slider>
       </TechsContainer>
     </Container>
   );

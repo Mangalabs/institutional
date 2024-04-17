@@ -29,7 +29,7 @@ function MobileNavigator() {
       top: '18px'
     },
     bmBurgerBars: {
-      background: '#373a47'
+      background: '#fff'
     },
     bmBurgerBarsHover: {
       background: '#a90000'
