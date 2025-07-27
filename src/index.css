@@ -1,76 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
+@theme {
+  --color-orange-dark: #A0361B;
+  --color-orange-vibrant: #C4501B;
+  --color-orange-light: #E9972D;
+  --color-green-dark: #2B5B3F;
+  --color-green-vibrant: #6B8E67;
+  --color-green-deep: #143829;
+
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+
+  --keyframes-pulse: {
+    '0%, 100%': { transform: 'scale(1)' };
+    '50%': { transform: 'scale(1.05)' };
+  };
+  --keyframes-blink: {
+    '0%, 50%': { border-color: 'rgb(233, 151, 45)' };
+    '51%, 100%': { border-color: 'transparent' };
+  };
+  --keyframes-float: {
+    '0%, 100%': { transform: 'translateY(0px)' };
+    '50%': { transform: 'translateY(-20px)' };
+  };
+  --keyframes-glow: {
+    'from': { box-shadow: '0 0 20px rgba(196, 80, 27, 0.3)' };
+    'to': { box-shadow: '0 0 30px rgba(196, 80, 27, 0.6)' };
+  };
+  --keyframes-morphing: {
+    '0%': { background-position: '0% 50%' };
+    '50%': { background-position: '100% 50%' };
+    '100%': { background-position: '0% 50%' };
+  };
+  --keyframes-reveal: {
+    '0%': { left: '0' };
+    '50%': { left: '0' };
+    '100%': { left: '100%' };
+  };
+  --keyframes-bounceIn: {
+    '0%': { opacity: '0', transform: 'scale(0.3) translateY(100px)' };
+    '50%': { opacity: '1', transform: 'scale(1.05) translateY(-10px)' };
+    '70%': { transform: 'scale(0.9) translateY(0px)' };
+    '100%': { opacity: '1', transform: 'scale(1) translateY(0px)' };
+  };
+  --keyframes-slideInLeft: {
+    'from': { opacity: '0', transform: 'translateX(-100px)' };
+    'to': { opacity: '1', transform: 'translateX(0)' };
+  };
+  --keyframes-slideInRight: {
+    'from': { opacity: '0', transform: 'translateX(100px)' };
+    'to': { opacity: '1', transform: 'translateX(0)' };
+  };
+  
+
+  --animation-pulse: 'pulse 2s infinite';
+  --animation-blink: 'blink 1s infinite';
+  --animation-float: 'float 6s ease-in-out infinite';
+  --animation-glow: 'glow 2s ease-in-out infinite alternate';
+  --animation-morphing: 'morphing 15s ease infinite';
+  --animation-bounceIn: 'bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards';
+  --animation-slideInLeft: 'slideInLeft 0.8s ease-out forwards';
+  --animation-slideInRight: 'slideInRight 0.8s ease-out forwards';
+  --animation-spinSlow: 'spin 3s linear infinite';
+  --animation-bounceDelay: 'bounce 1s infinite 1s';
+  --animation-pulseDelay: 'pulse 2s infinite 0.5s';
+}
+
+@import "tailwindcss";
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --orange-vibrant: #C4501B;
+  --green-deep: #143829;
+  --orange-light: #E9972D;
+  --green-dark: #2B5B3F;
 }
 
-html,
-body,
-#root {
-  height: 100%;
-  width: 100%;
-  margin: 0;
+.gradient-bg {
+  background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-dark) 100%);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.floating {
+  animation: float 6s ease-in-out infinite;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.particle {
+  position: absolute;
+  background: rgba(233, 151, 45, 0.3);
+  border-radius: 50%;
+  animation: particle-float 8s infinite linear;
+}
+
+@keyframes particle-float {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+.tech-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(196, 80, 27, 0.3);
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+.menu-toggle {
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+nav.scrolled {
+  @apply shadow-lg;
+}
+
+.project-card {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.magnetic-effect {
+  transition: transform 0.3s ease;
+}
+
+.magnetic-effect:hover {
+  transform: translate(var(--tx, 0), var(--ty, 0));
+}
+
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+.stagger-animation {
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: calc(var(--stagger) * 0.1s);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  a:hover {
-    color: #747bff;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

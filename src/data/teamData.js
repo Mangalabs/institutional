@@ -1,0 +1,101 @@
+export const teamData = {
+  heading: {
+    title: "Conheça o",
+    highlighted: "Time MangaLab",
+    subtitle: "Pessoas apaixonadas por tecnologia e inovação"
+  },
+  members: [
+    {
+      id: 1,
+      emoji: "👨‍💻",
+      name: "Diogo L.C. Felipe",
+      role: "CEO & Full Stack Developer",
+      quote: '"Café é meu combustível, código é minha arte"',
+      gradient: "from-orange-vibrant to-orange-dark",
+      badge: "⚡",
+      social: ["💼", "🐙", "🐦"],
+    },
+    {
+      id: 2,
+      emoji: "👨‍💻",
+      name: "Thicianny Marques",
+      role: "Full Stack Developer",
+      quote: '"Café é meu combustível, código é minha arte"',
+      gradient: "from-orange-vibrant to-orange-dark",
+      badge: "🌐",
+      social: ["💼", "🐙",  "📱"],
+    },
+    {
+      id: 3,
+      emoji: "👨‍💻",
+      name: "Gabriel F. Pigozzo",
+      role: "Full Stack Developer",
+      quote: '"Café é meu combustível, código é minha arte"',
+      gradient: "from-orange-vibrant to-orange-dark",
+      badge: "🌐",
+      social: ["💼", "🐙",  "📱"],
+    },
+    // {
+    //   id: 4,
+    //   emoji: "👩‍🎨",
+    //   name: "Marina Costa",
+    //   role: "UI/UX Designer",
+    //   quote: '"Design é resolver problemas com beleza"',
+    //   gradient: "from-green-dark to-green-deep",
+    //   badge: "🎨",
+    //   social: ["💼", "🎯", "📷"],
+    // },
+    // {
+    //   id: 5,
+    //   emoji: "👨‍🔧",
+    //   name: "Lucas Ferreira",
+    //   role: "DevOps Engineer",
+    //   quote: '"Se não está automatizado, não está pronto"',
+    //   gradient: "from-orange-dark to-orange-light",
+    //   badge: "⚙️",
+    //   social: ["💼", "🐙", "🔗"],
+    // },
+    // {
+    //   id: 6,
+    //   emoji: "👩‍💼",
+    //   name: "Ana Rodrigues",
+    //   role: "Project Manager",
+    //   quote: '"Organização é a chave do sucesso"',
+    //   gradient: "from-green-deep to-orange-vibrant",
+    //   badge: "📊",
+    //   social: ["💼", "📈", "💼"],
+    // },
+    // {
+    //   id: 5,
+    //   emoji: "👨‍📱",
+    //   name: "Pedro Santos",
+    //   role: "Mobile Developer",
+    //   quote: '"Mobile first, sempre!"',
+    //   gradient: "from-orange-light to-green-dark",
+    //   badge: "📱",
+    //   social: ["💼", "🐙", "📱"],
+    // },
+    // {
+    //   id: 6,
+    //   emoji: "👩‍🔬",
+    //   name: "Carla Mendes",
+    //   role: "QA Engineer",
+    //   quote: '"Bugs não passam por mim!"',
+    //   gradient: "from-green-dark to-orange-dark",
+    //   badge: "🧪",
+    //   social: ["💼", "🔍", "🧪"],
+    // }
+  ],
+  stats: {
+    projects: 2,
+    clients: 5,
+    years: 3,
+    support: 24
+  },
+  statLabels: {
+    projects: "Projetos Entregues",
+    clients: "Clientes Felizes",
+    years: "Anos de Experiência",
+    support: "Suporte 24/7"
+  }
+};
