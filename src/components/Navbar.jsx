@@ -38,8 +38,15 @@ const Navbar = ({ mobileMenuOpen, toggleMobileMenu, closeMobileMenu }) => {
     <nav className="fixed w-full z-50 bg-green-deep/90 backdrop-blur-sm border-b border-orange-light/20 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="text-2xl font-poppins font-bold bg-gradient-to-r from-orange-vibrant to-orange-light bg-clip-text text-transparent">
-            Manga<span className="text-white">Lab</span>
+          <div className="flex items-center">
+            <img 
+              src="/icon.webp" 
+              alt="MangaLab Icon" 
+              className="h-10 w-10 " 
+            />
+            <span className="text-2xl font-poppins font-bold bg-gradient-to-r from-orange-vibrant to-orange-light bg-clip-text text-transparent">
+              Manga<span className="text-white">Lab</span>
+            </span>
           </div>
 
           <div className="hidden md:flex ml-10 space-x-8 items-baseline">

@@ -1,4 +1,5 @@
-import { footerData } from '../data/footerData';
+import { footerData } from "../data/footerData";
+import { useEffect } from "react";
 
 const SectionTitle = ({ children }) => (
   <h4 className="font-poppins font-semibold text-lg mb-4">{children}</h4>
@@ -6,20 +7,62 @@ const SectionTitle = ({ children }) => (
 
 const Footer = () => {
   const year = new Date().getFullYear();
-  const {
-    brand,
-    socialLinks,
-    quickLinks,
-    services,
-    contact,
-    copyright,
-  } = footerData;
+  const { brand, socialLinks, quickLinks, services, contact, copyright } =
+    footerData;
+
+  useEffect(() => {
+    const handleSmoothScroll = (e) => {
+      const targetId = e.target.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+          const startPosition = window.pageYOffset;
+          const distance = targetPosition - startPosition;
+          const duration = 1000;
+          let startTime = null;
+
+          const animation = (currentTime) => {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+          };
+
+          const easeInOutQuad = (t, b, c, d) => {
+            t /= d/2;
+            if (t < 1) return c/2*t*t + b;
+            t--;
+            return -c/2 * (t*(t-2) - 1) + b;
+          };
+
+          requestAnimationFrame(animation);
+        }
+      }
+    };
+
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+      link.addEventListener('click', handleSmoothScroll);
+    });
+
+    return () => {
+      links.forEach(link => {
+        link.removeEventListener('click', handleSmoothScroll);
+      });
+    };
+  }, []);
 
   const Brand = () => (
     <div>
-      <div className="text-2xl font-poppins font-bold mb-4 bg-gradient-to-r from-orange-vibrant to-orange-light bg-clip-text text-transparent">
-        {brand.name.split(brand.highlight)[0]}
-        <span className="text-white">{brand.highlight}</span>
+      <div className="flex">
+        <img src="/icon.webp" alt="MangaLab Icon" className="h-8 w-8 mr-1 " />
+        <div className="text-2xl font-poppins font-bold mb-4 bg-gradient-to-r from-orange-vibrant to-orange-light bg-clip-text text-transparent">
+          {brand.name.split(brand.highlight)[0]}
+          <span className="text-white">{brand.highlight}</span>
+        </div>
       </div>
       <p className="text-gray-300 mb-4">{brand.description}</p>
       <div className="flex space-x-4">
@@ -71,7 +114,10 @@ const Footer = () => {
 
         <div className="border-t border-orange-light/20 mt-8 pt-8 text-center">
           <p className="text-gray-300">
-            © {year} MangaLab. {copyright.text} | {copyright.loveText}
+            © {year} MangaLab. {copyright.text} |
+            <span className="bold ml-2">
+              Desenvolvido com <img src={copyright.icon} alt="amor" className="h-4 w-4 inline m-1" /> pela equipe <b>MangaLab</b>
+            </span>
           </p>
         </div>
       </div>

@@ -42,7 +42,7 @@ export const contactData = {
     {
       icon: "📱",
       title: "WhatsApp",
-      content: "(11) 99999-9999"
+      content: "(85) 981263142"
     },
     {
       icon: "📍",

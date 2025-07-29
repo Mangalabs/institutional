@@ -18,7 +18,7 @@ export const footerData = {
   ],
   contact: [
     { type: "email", value: "contato@mangalab.io" },
-    { type: "phone", value: "(11) 99999-9999" },
+    { type: "phone", value: "(85) 981263142" },
     { type: "address", value: "Curitiba, PR" }
   ],
   socialLinks: [
@@ -28,6 +28,7 @@ export const footerData = {
   ],
   copyright: {
     text: "Todos os direitos reservados.",
-    loveText: "Desenvolvido com ❤️ pela equipe MangaLab"
+  icon: "/icon-copyright.png",
+  loveText: "Desenvolvido com pela equipe MangaLab"
   }
 };
