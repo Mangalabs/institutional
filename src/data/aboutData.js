@@ -19,7 +19,7 @@ export const aboutData = {
     },
   ],
   teamCard: {
-    emoji: "👥",
+    teamIcon: "/icon-about.webp",
     title: "Nossa Equipe",
     subtitle: "Profissionais apaixonados por tecnologia",
     gradient: "from-green-deep to-green-dark"

@@ -28,7 +28,7 @@ export const footerData = {
   ],
   copyright: {
     text: "Todos os direitos reservados.",
-  icon: "/icon-copyright.png",
-  loveText: "Desenvolvido com pela equipe MangaLab"
+    icon: "/icon-copyright.png",
+    loveText: "Desenvolvido com pela equipe MangaLab"
   }
 };

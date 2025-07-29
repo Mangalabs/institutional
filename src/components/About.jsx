@@ -67,7 +67,7 @@ const About = () => {
               className={`w-full h-96 bg-gradient-to-br ${teamCard.gradient} rounded-2xl flex items-center justify-center`}
             >
               <div className="text-center">
-                <div className="text-6xl mb-4"><img className="h-35 w-45 m-auto" src="/public/icon-about.webp" alt="" /></div>
+                <div className="text-6xl mb-4"><img className="h-35 w-45 m-auto" src={teamCard.teamIcon} alt="" /></div>
                 <h3 className="text-2xl font-poppins font-bold text-white mb-2">
                   {teamCard.title}
                 </h3>
