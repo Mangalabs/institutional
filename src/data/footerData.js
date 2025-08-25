@@ -2,7 +2,8 @@ export const footerData = {
   brand: {
     name: "MangaLab",
     highlight: "Lab",
-    description: "Transformando ideias em realidade digital com inovação e criatividade."
+    description:
+      "Transformando ideias em realidade digital com inovação e criatividade.",
   },
   quickLinks: [
     { label: "Home", href: "#home" },
@@ -19,7 +20,7 @@ export const footerData = {
   contact: [
     { type: "email", value: "contato@mangalab.io" },
     { type: "phone", value: "(85) 981263142" },
-    { type: "address", value: "Curitiba, PR" }
+    { type: "address", value: "Eusébio, CE" },
   ],
   socialLinks: [
     { icon: "📘", label: "Facebook" },
@@ -29,6 +30,6 @@ export const footerData = {
   copyright: {
     text: "Todos os direitos reservados.",
     icon: "/icon-copyright.png",
-    loveText: "Desenvolvido com pela equipe MangaLab"
-  }
+    loveText: "Desenvolvido com pela equipe MangaLab",
+  },
 };
