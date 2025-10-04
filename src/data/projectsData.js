@@ -13,6 +13,19 @@ export const projectsData = {
   projects: [
     {
       id: 1,
+      title: "Senior Koster",
+      description:
+        "Site institucional de confeitaria familiar e elegante",
+      category: "site",
+      icon: "🧁",
+      gradient: "from-orange-light to-orange-dark",
+      tags: ["React", "Landing Page", "Confeitaria"],
+      image:
+        "/seniorkoster.png",
+      link: "https://www.seniorkoster.com.br/",
+    },
+    {
+      id: 2,
       title: "MG Tractor Peças",
       description:
         "Vitrine online de peças para tratores com catálogo digital completo",
@@ -25,7 +38,7 @@ export const projectsData = {
       link: "https://mgtratorpecas.com.br",
     },
     {
-      id: 2,
+      id: 3,
       title: "Cardápio digital Espuma do Mar",
       description: "Site de cardápio digital para restaurante",
       category: "site",
@@ -37,7 +50,7 @@ export const projectsData = {
       link: "https://espumadomar.my.canva.site",
     },
     {
-      id: 3,
+      id: 4,
       title: "SalonSync",
       description: "Sistema de gerenciamento focado em salões e barbearias",
       category: "sistema",
