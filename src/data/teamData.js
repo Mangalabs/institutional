@@ -37,7 +37,7 @@ export const teamData = {
     },
   ],
   stats: {
-    projects: 2,
+    projects: 5,
     clients: 5,
     years: 3,
     support: 24,
