@@ -37,8 +37,8 @@ export const teamData = {
     },
   ],
   stats: {
-    projects: 6,
-    clients: 6,
+    projects: 12,
+    clients: 12,
     years: 2,
     support: 24,
   },
