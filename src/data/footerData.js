@@ -1,3 +1,5 @@
+import { Github, Instagram, Linkedin, Mail } from "lucide-react";
+
 export const footerData = {
   brand: {
     name: "MangaLab",
@@ -23,9 +25,10 @@ export const footerData = {
     { type: "address", value: "Eusébio, CE" },
   ],
   socialLinks: [
-    { icon: "📘", label: "Facebook" },
-    { icon: "📷", label: "Instagram" },
-    { icon: "💼", label: "LinkedIn" },
+    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/mangalabtech" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/mangalabio" },
+    { icon: Github, label: "Github", href: "#" },
+    { icon: Mail, label: "Email", href: "mailto:contato@mangalab.com.br" },
   ],
   copyright: {
     text: "Todos os direitos reservados.",
