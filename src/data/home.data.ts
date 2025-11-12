@@ -66,7 +66,7 @@ export const ecosystem: EcosystemItem[] = [
     icon: Rocket,
     stats: [
       { value: '120+', label: 'Vidas transformadas' },
-      { value: '80%', label: 'Empregabilidade' },
+      { value: '80%', label: 'Novos empregos' },
       { value: 'R$ 4k', label: 'Salário médio inicial' },
     ],
     gradient: 'from-[#E9972D] to-[#C4501B]',

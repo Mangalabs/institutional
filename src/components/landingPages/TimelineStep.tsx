@@ -30,9 +30,9 @@ export function TimelineStep({ step, index, isLast }: TimelineStepProps) {
           {step.step}
         </motion.div>
 
-        <div className='pt-4'>
+        <div className='pt-2'>
           <Icon size={32} className='text-[#E9972D] mx-auto mb-3' />
-          <h3 className='text-[#143829] text-xl font-bold mb-2'>{step.title}</h3>
+          <h3 className='text-[#143829] text-md font-bold mb-2'>{step.title}</h3>
           <p className='text-[#143829]/70 text-sm mb-3'>{step.description}</p>
           <p className='text-[#143829]/50 text-xs italic'>{step.detail}</p>
         </div>

@@ -22,9 +22,9 @@ export function EcosystemCard({ item, index, onNavigate }: EcosystemCardProps) {
       transition={{ delay: index * 0.2, type: 'spring' }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className='group relative cursor-pointer'
+      className='group relative'
     >
-      <div className='relative bg-white/5 backdrop-blur-md border border-white/10 rounded-[2.5rem] p-8 h-full overflow-hidden'>
+      <div className='relative bg-white/5 backdrop-blur-md border border-white/10 rounded-[2.5rem] p-8 h-full overflow-hidden pointer-events-none'>
         <motion.div
           className='absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500'
           style={{
@@ -57,7 +57,7 @@ export function EcosystemCard({ item, index, onNavigate }: EcosystemCardProps) {
           {item.stats.map((stat) => (
             <div
               key={stat.label}
-              className='text-center bg-white/5 rounded-2xl p-3'
+              className='text-center bg-white/5 rounded-2xl p-4'
             >
               <div
                 className='font-bold text-lg'
@@ -85,13 +85,14 @@ export function EcosystemCard({ item, index, onNavigate }: EcosystemCardProps) {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => onNavigate(item.id)}
-          className='w-full py-3 rounded-full font-semibold flex items-center justify-center gap-2 transition-all'
+          className='w-full py-3 rounded-full font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer'
           style={{
             background: `linear-gradient(135deg, ${item.accent}, ${item.accent}cc)`,
             color:
               item.id === 'investir' || item.id === 'landing-pages'
                 ? '#143829'
                 : '#fff',
+            cursor: 'pointer'
           }}
         >
           <span>{item.cta}</span>

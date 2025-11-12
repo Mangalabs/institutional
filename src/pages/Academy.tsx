@@ -139,13 +139,13 @@ export function Academy() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className='text-white/90 text-lg sm:text-xl md:text-2xl mb-10 max-w-4xl mx-auto leading-relaxed px-4'
+            className='text-[#143829]/80 text-lg sm:text-xl md:text-2xl mb-10 max-w-4xl mx-auto leading-relaxed px-4'
           >
             A MangaAcademy é um{' '}
             <strong className='text-[#E9972D]'>movimento nacional</strong> que
             conecta jovens de todo o Brasil à tecnologia, à empregabilidade e a
             um propósito real:{' '}
-            <strong className='text-white'>mudar vidas</strong>.
+            <strong className='text-[#143829]/80'>mudar vidas</strong>.
           </motion.p>
 
           <motion.div
@@ -242,7 +242,7 @@ export function Academy() {
         </div>
       </section>
 
-      <section className='relative py-20 px-4 sm:px-6 bg-white overflow-hidden'>
+      {/* <section className='relative py-20 px-4 sm:px-6 bg-white overflow-hidden'>
         <div className='relative max-w-7xl mx-auto'>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -268,7 +268,7 @@ export function Academy() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className='relative py-20 px-4 sm:px-6 bg-gradient-to-br from-[#FFF8F0] to-[#FFFBF5] overflow-hidden'>
         <svg

@@ -170,7 +170,7 @@ export const timeline: TimelineStep[] = [
   },
   {
     step: '3',
-    title: 'Desenvolvimento',
+    title: 'Criação',
     description: 'Código e deploy em 5 dias',
     icon: Code,
     detail: 'Desenvolvemos com as melhores tecnologias do mercado',

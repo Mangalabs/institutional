@@ -98,6 +98,10 @@ html {
   background: var(--color-manga-burnt);
 }
 
-button {
-  cursor: pointer;
+button,
+[class*='motion-button'],
+motion-button,
+[data-motion-button],
+[data-framer-component='motion.button'] {
+  cursor: pointer !important;
 }
