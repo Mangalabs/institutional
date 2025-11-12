@@ -52,11 +52,11 @@ export interface TeamMember {
   name: string
   role: string
   description: string
+  image: string
   imageBgGradient: string
   color: string
   socials: {
     linkedin: string
-    github: string
     mail: string
   }
 }
@@ -216,31 +216,35 @@ export const globalFeatures: GlobalFeature[] = [
 
 export const teamMembers: TeamMember[] = [
   {
-    name: 'João Silva',
-    role: 'CEO & Co-Fundador',
+    name: 'Gabriel Franco',
+    role: 'Dev e Co-Fundador',
     description:
       'Visionário em tecnologia, lidera times e estratégias de inovação.',
+    image: 'gabriel-franco.jpeg',
     imageBgGradient: 'from-[#E9972D]/20 to-[#C4501B]/20',
     color: '#E9972D',
-    socials: { linkedin: '#', github: '#', mail: '#' },
+    socials: { linkedin: '#', mail: '#' },
   },
   {
-    name: 'Maria Santos',
-    role: 'CTO & Co-Fundadora',
-    description: 'Especialista em desenvolvimento ágil e mentorias técnicas.',
-    imageBgGradient: 'from-[#831CED]/20 to-[#6B14C4]/20',
-    color: '#831CED',
-    socials: { linkedin: '#', github: '#', mail: '#' },
-  },
-  {
-    name: 'Pedro Costa',
-    role: 'CPO & Co-Fundador',
-    description: 'Focado em produto e transforma ideias em soluções que encantam.',
+    name: 'Thicianny Marques',
+    role: 'Dev & Co-Fundadora',
+    description: 'Especializada em construir aplicações sofisticadas, elegantes e de alto impacto. ',
+    image: 'thicianny-marques.jpeg',
     imageBgGradient: 'from-[#14A2B6]/20 to-[#0D7A8A]/20',
     color: '#14A2B6',
-    socials: { linkedin: '#', github: '#', mail: '#' },
+    socials: { linkedin: '#', mail: '#' },
+  },
+  {
+    name: 'Diogo Felipe',
+    role: 'CTO & Co-Fundador',
+    description: 'Resiliênte em relação às adversidades do mercado.',
+    image: 'diogo-felipe.jpg',
+    imageBgGradient: 'from-[#A0361B]/20 to-[#A0300a]/20',
+    color: '#A0361B',
+    socials: { linkedin: '#', mail: '#' },
   },
 ]
+
 
 export const finalCtaCards: CallToAction[] = [
   {

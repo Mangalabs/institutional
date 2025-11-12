@@ -18,14 +18,17 @@ export function TeamCard({ member, index }: TeamCardProps) {
         y: -10,
         transition: { type: 'spring', stiffness: 300 },
       }}
-      className='relative group'
-    >
+      className='relative group'>
       <div className='relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20 rounded-3xl overflow-hidden'>
         <div
-          className='relative h-64 bg-gradient-to-br flex items-center justify-center'
-          style={{ background: member.imageBgGradient }}
-        >
-          <div className='absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent' />
+          className='relative h-64 flex items-center justify-center overflow-hidden'
+          style={{ background: member.imageBgGradient }}>
+          <img
+            src={member.image}
+            alt={member.name}
+            className='absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110'
+          />
+          <div className='absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent' />
         </div>
 
         <div className='p-6'>
@@ -44,46 +47,15 @@ export function TeamCard({ member, index }: TeamCardProps) {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className='w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition-colors'
-              style={{ '--hover-color': member.color } as React.CSSProperties}
-              onHoverStart={(e) =>
-                (e.currentTarget.style.backgroundColor = 'var(--hover-color)')
-              }
-              onHoverEnd={(e) =>
-                (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)')
-              }
-            >
+              style={{ '--hover-color': member.color } as React.CSSProperties}>
               <Linkedin size={18} className='text-white' />
-            </motion.a>
-            <motion.a
-              href={member.socials.github}
-              target='_blank'
-              rel='noopener noreferrer'
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className='w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition-colors'
-              style={{ '--hover-color': member.color } as React.CSSProperties}
-              onHoverStart={(e) =>
-                (e.currentTarget.style.backgroundColor = 'var(--hover-color)')
-              }
-              onHoverEnd={(e) =>
-                (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)')
-              }
-            >
-              <Github size={18} className='text-white' />
             </motion.a>
             <motion.a
               href={`mailto:${member.socials.mail}`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className='w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition-colors'
-              style={{ '--hover-color': member.color } as React.CSSProperties}
-              onHoverStart={(e) =>
-                (e.currentTarget.style.backgroundColor = 'var(--hover-color)')
-              }
-              onHoverEnd={(e) =>
-                (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)')
-              }
-            >
+              style={{ '--hover-color': member.color } as React.CSSProperties}>
               <Mail size={18} className='text-white' />
             </motion.a>
           </div>

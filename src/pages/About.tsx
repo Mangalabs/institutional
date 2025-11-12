@@ -276,7 +276,7 @@ export function About() {
                 transition: { type: 'spring', stiffness: 300 },
               }}
               className='relative group'>
-              <motion.div className='absolute -inset-1 bg-gradient-to-r from-[#E9972D] to-[#C4501B] opacity-20 group-hover:opacity-30 rounded-3xl blur-xl transition-opacity' />
+              <motion.div className='absolute -inset-1 bg-gradient-to-r from-[#E9972D] to-[#C4501B] opacity-10 group-hover:opacity-15 rounded-3xl blur-xl transition-opacity' />
               <div className='relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-10 h-full'>
                 <div className='flex items-center gap-4 mb-6'>
                   <div className='w-16 h-16 bg-gradient-to-br from-[#E9972D] to-[#C4501B] rounded-2xl flex items-center justify-center shadow-xl'>
@@ -288,7 +288,7 @@ export function About() {
                 </div>
                 <p className='text-base sm:text-lg text-white/70 leading-relaxed'>
                   Você tira seu sonho do papel com um custo{' '}
-                  <strong className='text-[#551996]'>até 40% menor</strong> que
+                  <strong className='text-[#14A2B6]'>até 40% menor</strong> que
                   o padrão de mercado, garantido pela qualidade e supervisão de
                   experts.
                 </p>
@@ -305,7 +305,7 @@ export function About() {
                 transition: { type: 'spring', stiffness: 300 },
               }}
               className='relative group'>
-              <motion.div className='absolute -inset-1 bg-gradient-to-r from-[#831CED] to-[#6B14C4] opacity-20 group-hover:opacity-30 rounded-3xl blur-xl transition-opacity' />
+              <motion.div className='absolute -inset-1 bg-gradient-to-r from-[#831CED] to-[#6B14C4] opacity-10 group-hover:opacity-15 rounded-3xl blur-xl transition-opacity' />
               <div className='relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-10 h-full'>
                 <div className='flex items-center gap-4 mb-6'>
                   <div className='w-16 h-16 bg-gradient-to-br from-[#831CED] to-[#6B14C4] rounded-2xl flex items-center justify-center shadow-xl'>
@@ -331,7 +331,7 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className='relative'>
-            <motion.div className='absolute -inset-1 bg-gradient-to-r from-[#E9972D]/30 via-[#831CED]/30 to-[#14A2B6]/30 rounded-3xl blur-xl' />
+            <motion.div className='absolute -inset-1 bg-gradient-to-r from-[#E9972D]/10 via-[#831CED]/10 to-[#14A2B6]/10 rounded-3xl blur-xl' />
             <div className='relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-3xl p-10 sm:p-12 text-center'>
               <p className='text-xl sm:text-2xl md:text-3xl text-white leading-relaxed'>
                 Você não está apenas{' '}
@@ -407,7 +407,7 @@ export function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className='relative'>
-              <motion.div className='absolute -inset-1 bg-[#E9972D]/20 rounded-3xl blur-xl' />
+              <motion.div className='absolute -inset-1 rounded-3xl blur-xl' />
               <div className='relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 border-l-4 border-l-[#E9972D] rounded-3xl p-8 sm:p-10'>
                 <p className='text-lg sm:text-xl text-white/80 leading-relaxed'>
                   A MangaLab{' '}
@@ -428,7 +428,7 @@ export function About() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
               className='relative'>
-              <motion.div className='absolute -inset-1 bg-[#14A2B6]/20 rounded-3xl blur-xl' />
+              <motion.div className='absolute -inset-1 rounded-3xl blur-xl' />
               <div className='relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 border-l-4 border-l-[#14A2B6] rounded-3xl p-8 sm:p-10'>
                 <p className='text-lg sm:text-xl text-white/80 leading-relaxed'>
                   Tudo começou com{' '}
@@ -436,8 +436,8 @@ export function About() {
                   sermos uma empresa, éramos um grupo de estudo. Em{' '}
                   <strong className='text-[#14A2B6]'>2020</strong>,
                   transformamos essa mentoria em um negócio, com uma essência{' '}
-                  <strong className='text-white'>100% paraense</strong> – direto
-                  da "Cidade das Mangueiras" – para provar que inovação
+                  <strong className='text-white'>100% paraense</strong>,direto
+                  da "Cidade das Mangueiras", para provar que inovação
                   disruptiva{' '}
                   <strong className='text-[#14A2B6]'>não tem CEP</strong>.
                 </p>
@@ -576,7 +576,7 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className='relative'>
-            <motion.div className='absolute -inset-1 bg-gradient-to-r from-[#E9972D]/20 via-[#831CED]/20 to-[#14A2B6]/20 rounded-3xl blur-xl' />
+            <motion.div className='absolute -inset-1 bg-gradient-to-r from-[#E9972D]/10 via-[#831CED]/10 to-[#14A2B6]/10 rounded-3xl blur-xl' />
             <div className='relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-3xl p-8 sm:p-12'>
               <div className='grid grid-cols-1 sm:grid-cols-3 gap-8 text-center'>
                 <div>
