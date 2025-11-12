@@ -79,7 +79,7 @@ export function Navbar() {
             <Link
               to='/investir'
               className='hidden md:block bg-[#E9972D] hover:bg-[#C4501B] text-white px-6 py-2.5 rounded-full transition-colors duration-300'>
-              Investir
+              Saiba mais
             </Link>
           </motion.div>
 

@@ -66,38 +66,38 @@ export interface MentorshipFeature {
 }
 
 export const impactStats: ImpactStat[] = [
-  {
-    value: '20+',
-    label: 'talentos preparados',
-    description:
-      'Jovens que concluíram a imersão e estão prontos para a primeira oportunidade.',
-    icon: Users,
-    color: '#B6461B',
-  },
-  {
-    value: '5+',
-    label: 'projetos reais no portfólio',
-    description:
-      'Soluções desenvolvidas que comprovam a capacidade técnica para o mercado.',
-    icon: Briefcase,
-    color: '#FDCD00',
-  },
-  {
-    value: '10+',
-    label: 'mentores conectados',
-    description:
-      'Profissionais sênior e empresas parceiras ativamente envolvidos na formação.',
-    icon: HeartHandshake,
-    color: '#E9972D',
-  },
-  {
-    value: '12',
-    label: 'semanas de imersão prática',
-    description:
-      'Foco total em criar portfólio e simular o dia a dia de uma empresa de tech.',
-    icon: Heart,
-    color: '#2B5B3F',
-  },
+{
+  value: '20+',
+  label: 'talentos preparados',
+  description:
+    'Jovens que concluíram a imersão e estão prontos para iniciar sua jornada profissional.',
+  icon: Users,
+  color: '#B6461B',
+},
+{
+  value: '5+',
+  label: 'projetos reais no portfólio',
+  description:
+    'Soluções aplicadas que demonstram na prática a capacidade técnica para o mercado.',
+  icon: Briefcase,
+  color: '#FDCD00',
+},
+{
+  value: '10+',
+  label: 'mentores conectados',
+  description:
+    'Profissionais experientes e empresas parceiras engajados na formação dos talentos.',
+  icon: HeartHandshake,
+  color: '#E9972D',
+},
+{
+  value: '12',
+  label: 'semanas de imersão prática',
+  description:
+    'Experiência completa e intensa, com foco em criar portfólio e  simular o dia a dia do desenvolvedor.',
+  icon: Heart,
+  color: '#2B5B3F',
+},
 ]
 
 export const methodology: MethodologyItem[] = [

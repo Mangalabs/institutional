@@ -72,25 +72,31 @@ export interface CallToAction {
 }
 
 export const metrics: Metric[] = [
-  {
-    value: '150+',
-    label: 'Projetos entregues, incluindo clientes internacionais',
-    icon: Rocket,
-    color: '#FDCD00',
-  },
-  {
-    value: '500k+',
-    label: 'Usuários Impactados Diariamente',
-    icon: Globe,
-    color: '#E9972D',
-  },
-  { value: '98%', label: 'Satisfação', icon: Star, color: '#C4501B' },
-  {
-    value: '120+',
-    label: 'Vidas transformadas pela Academy',
-    icon: Heart,
-    color: '#2B5B3F',
-  },
+{
+  value: '150+',
+  label: 'Projetos entregues para marcas globais',
+  icon: Rocket,
+  color: '#FDCD00',
+},
+{
+  value: '500k+',
+  label: 'Pessoas impactadas todos os dias',
+  icon: Globe,
+  color: '#E9972D',
+},
+{
+  value: '98%',
+  label: 'Índice de satisfação dos clientes',
+  icon: Star,
+  color: '#C4501B',
+},
+{
+  value: '120+',
+  label: 'Vidas transformadas pela Academy',
+  icon: Heart,
+  color: '#2B5B3F',
+},
+
 ]
 
 export const dna: DnaItem[] = [

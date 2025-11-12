@@ -4,14 +4,10 @@ import {
   Rocket,
   BarChart3,
   BadgeCheck,
-  CheckCircle2,
-  Lock,
-  AlertCircle,
-  Sparkles,
   Heart,
   Lightbulb,
   Shield,
-  Trophy,
+  DollarSign,
 } from 'lucide-react'
 import { useState } from 'react'
 
@@ -476,6 +472,177 @@ export function LandingPages() {
               Não somos apenas uma empresa de tecnologia, somos um ecossistema
               que une propósito, inovação e impacto real.
             </p>
+          </motion.div>
+          <div className='grid md:grid-cols-2 gap-6 mb-8'>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: 'spring', stiffness: 100 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className='group relative'>
+              <div className='relative bg-white/70 backdrop-blur-sm border border-[#E9972D]/20 hover:border-[#FDCD00] rounded-3xl p-8 shadow-lg transition-all'>
+                <motion.div
+                  className='absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500'
+                  style={{
+                    background:
+                      'radial-gradient(circle at top, #E9972D10 0%, transparent 70%)',
+                  }}
+                />
+
+                <div className='relative flex items-center gap-4 mb-4'>
+                  <motion.div
+                    className='w-14 h-14 bg-gradient-to-br from-[#E9972D] to-[#FDCD00] rounded-xl flex items-center justify-center shadow-lg flex-shrink-0'
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}>
+                    <Rocket size={24} className='text-white' />
+                  </motion.div>
+                  <h3 className='text-[#143829] text-xl font-bold'>
+                    Tecnologia acessível
+                  </h3>
+                </div>
+
+                <p className='text-[#143829]/70 leading-relaxed relative'>
+                  Acreditamos que{' '}
+                  <strong className='text-[#143829]'>
+                    toda empresa merece soluções digitais de alto nível
+                  </strong>
+                  , independentemente do porte. Democratizamos o acesso à
+                  inovação sem abrir mão da qualidade.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: 'spring', stiffness: 100 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className='group relative'>
+              <div className='relative bg-white/70 backdrop-blur-sm border border-[#E9972D]/20 hover:border-[#FDCD00] rounded-3xl p-8 shadow-lg transition-all'>
+                <motion.div
+                  className='absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500'
+                  style={{
+                    background:
+                      'radial-gradient(circle at top, #FDCD0010 0%, transparent 70%)',
+                  }}
+                />
+
+                <div className='relative flex items-center gap-4 mb-4'>
+                  <motion.div
+                    className='w-14 h-14 bg-gradient-to-br from-[#FDCD00] to-[#E9972D] rounded-xl flex items-center justify-center shadow-lg flex-shrink-0'
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}>
+                    <Lightbulb size={24} className='text-white' />
+                  </motion.div>
+                  <h3 className='text-[#143829] text-xl font-bold'>
+                    Formando para Transformar
+                  </h3>
+                </div>
+
+                <p className='text-[#143829]/70 leading-relaxed relative'>
+                  Somos uma{' '}
+                  <strong className='text-[#143829]'>
+                    ponte entre talentos em formação e empresas
+                  </strong>{' '}
+                  que precisam evoluir. Criamos oportunidades aprendizado
+                  enquanto impulsionamos a transformação digital.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className='text-center mb-6 max-w-4xl mx-auto'>
+            <p className='text-[#143829]/80 text-lg leading-relaxed'>
+              Esse modelo cria um{' '}
+              <span className='text-[#E9972D] font-semibold'>
+                ciclo virtuoso
+              </span>
+              : negócios pagam menos, novos devs crescem com projetos reais e o
+              resultado final mantém padrão sênior.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: 'spring', stiffness: 100 }}
+            whileHover={{ scale: 1.02, y: -5 }}
+            className='relative group mb-6'>
+            <div className='relative bg-gradient-to-r from-white/80 to-white/60 backdrop-blur-md border-2 border-[#143829]/10 hover:border-[#143829]/30 rounded-3xl p-8 shadow-xl transition-all'>
+              <div className='flex flex-col sm:flex-row items-start sm:items-center gap-4'>
+                <motion.div
+                  className='w-14 h-14 bg-gradient-to-br from-[#143829] to-[#2B5B3F] rounded-xl flex items-center justify-center shadow-lg flex-shrink-0'
+                  whileHover={{ rotate: 360, scale: 1.1 }}
+                  transition={{ duration: 0.6 }}>
+                  <Shield size={26} className='text-white' />
+                </motion.div>
+                <div>
+                  <h3 className='text-[#143829] text-xl font-bold mb-2'>
+                    Qualidade garantida por especialistas
+                  </h3>
+                  <p className='text-[#143829]/70 leading-relaxed'>
+                    Todo projeto é supervisionado por{' '}
+                    <span className='text-[#143829] font-semibold'>
+                      desenvolvedores seniores
+                    </span>
+                    , garantindo código limpo, estável e de alto desempenho —
+                    sem perder o frescor das novas ideias.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: 'spring', stiffness: 100 }}
+            whileHover={{ scale: 1.02, y: -5 }}
+            className='relative group'>
+            <div className='relative bg-gradient-to-br from-[#FDCD00]/20 to-[#E9972D]/20 backdrop-blur-sm border-l-4 border-[#E9972D] rounded-r-3xl p-8 shadow-xl transition-all overflow-hidden'>
+              <div
+                className='absolute top-0 right-0 w-32 h-32 opacity-10'
+                style={{
+                  background: 'linear-gradient(135deg, #E9972D, transparent)',
+                  clipPath: 'polygon(100% 0, 100% 100%, 0 0)',
+                }}
+              />
+
+              <div className='relative flex flex-col sm:flex-row items-start sm:items-center gap-4'>
+                <motion.div
+                  animate={{
+                    scale: [1, 1.1, 1],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                  className='w-14 h-14 bg-gradient-to-br from-[#E9972D] to-[#FDCD00] rounded-full flex items-center justify-center shadow-xl flex-shrink-0'>
+                  <DollarSign size={26} className='text-white' />
+                </motion.div>
+                <div>
+                  <h3 className='text-[#143829] text-xl font-black mb-2'>
+                    Resultado: até 40% abaixo do mercado
+                  </h3>
+                  <p className='text-[#143829]/80 leading-relaxed'>
+                    Nosso modelo colaborativo entrega{' '}
+                    <strong className='text-[#143829]'>
+                      qualidade de alto padrão com investimento reduzido
+                    </strong>
+                    . Uma escolha inteligente que impulsiona negócios e forma
+                    novos profissionais.
+                  </p>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <div className='grid md:grid-cols-2 gap-6 mb-8'>
