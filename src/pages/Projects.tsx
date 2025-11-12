@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion'
 import { Filter, ExternalLink } from 'lucide-react'
 
-import { filters, capabilities } from '../data/projects.data'
+import { capabilities } from '../data/projects.data'
 import { useProjectFilter } from '../hooks/useProjectFilter'
 import { CapabilityCard } from '../components/projects/CapabilityCard'
 import { ProjectCard } from '../components/projects/ProjectCard'
 
 export default function Projects() {
-  const { activeFilter, setActiveFilter, filteredProjects } = useProjectFilter()
+  const { activeFilter, setActiveFilter, filteredProjects, filters } =
+    useProjectFilter()
 
   return (
     <div className='min-h-screen pt-20'>
@@ -109,16 +110,16 @@ export default function Projects() {
               <Filter size={18} className='text-white/60 sm:w-5 sm:h-5' />
               {filters.map((filter) => (
                 <motion.button
-                  key={filter}
+                  key={filter.id}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => setActiveFilter(filter)}
+                  onClick={() => setActiveFilter(filter.id)}
                   className={`px-4 sm:px-6 py-2 rounded-full transition-all duration-300 text-sm sm:text-base ${
-                    activeFilter === filter
+                    activeFilter === filter.id
                       ? 'bg-[#C4501B] text-white'
                       : 'bg-white/5 text-white/60 hover:bg-white/10'
                   }`}>
-                  {filter}
+                  {filter.label}
                 </motion.button>
               ))}
             </div>

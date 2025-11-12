@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ExternalLink, Code2 } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
 import { type Project } from './../../data/projects.data'
 
 interface ProjectCardProps {
@@ -12,8 +12,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <motion.div
-      key={project.id}
+    <motion.a
+      href={project.link}
+      target='_blank'
+      rel='noopener noreferrer'
       layout
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -21,38 +23,27 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       transition={{ delay: index * 0.1 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className='group relative cursor-pointer'
-    >
+      className='group relative cursor-pointer block'>
       <motion.div
         animate={{
           scale: isHovered ? 1.02 : 1,
         }}
         transition={{ duration: 0.3 }}
-        style={{ transformStyle: 'preserve-3d' }}
-        className='bg-white/5 border border-white/10 rounded-3xl overflow-hidden h-full'
-      >
-        <div
-          className='h-40 sm:h-48 relative overflow-hidden'
-          style={{ backgroundColor: project.color }}
-        >
-          <div className='absolute inset-0 bg-gradient-to-b from-transparent to-black/50' />
-          <motion.div
-            className='absolute inset-0 flex items-center justify-center'
-            animate={{
-              scale: isHovered ? 1.1 : 1,
-            }}
-            transition={{ duration: 0.3 }}
-          >
-            <Code2 size={48} className='text-white/20 sm:w-16 sm:h-16' />
-          </motion.div>
+        className='bg-white/5 border border-white/10 rounded-3xl overflow-hidden h-full'>
+        <div className='h-40 sm:h-48 relative overflow-hidden'>
+          <img
+            src={project.image}
+            alt={project.title}
+            className='absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
+          />
+          <div className='absolute inset-0 bg-gradient-to-b from-transparent to-black/60' />
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{
               opacity: isHovered ? 1 : 0,
             }}
-            className='absolute inset-0 bg-black/60 flex items-center justify-center'
-          >
+            className='absolute inset-0 bg-black/60 flex items-center justify-center'>
             <div className='text-white flex items-center gap-2 text-sm sm:text-base'>
               <span>Ver projeto</span>
               <ExternalLink size={18} className='sm:w-5 sm:h-5' />
@@ -62,14 +53,8 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
         <div className='p-5 sm:p-6'>
           <div className='flex items-start justify-between mb-2 sm:mb-3'>
-            <h3 className='text-white text-base sm:text-lg'>{project.name}</h3>
-            <span
-              className='text-xs px-2 sm:px-3 py-1 rounded-full whitespace-nowrap'
-              style={{
-                backgroundColor: `${project.color}20`,
-                color: project.color,
-              }}
-            >
+            <h3 className='text-white text-base sm:text-lg'>{project.title}</h3>
+            <span className='text-xs px-2 sm:px-3 py-1 rounded-full bg-white/5 text-white/70'>
               {project.category}
             </span>
           </div>
@@ -78,27 +63,26 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             {project.description}
           </p>
 
-          <div className='flex flex-wrap gap-2 mb-3 sm:mb-4'>
-            {project.tech.map((tech) => (
+          <div className='flex flex-wrap gap-2'>
+            {project.tags.map((tag) => (
               <span
-                key={tech}
-                className='text-xs px-2 sm:px-3 py-1 bg-white/5 border border-white/10 rounded-full text-white/60'
-              >
-                {tech}
+                key={tag}
+                className='text-xs px-2 sm:px-3 py-1 bg-white/5 border border-white/10 rounded-full text-white/60'>
+                {tag}
               </span>
             ))}
           </div>
 
-          <div className='flex gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-white/10'>
+          <div className='flex gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-white/10 mt-4'>
             {Object.entries(project.metrics).map(([key, value]) => (
               <div key={key}>
-                <div className='text-[#C4501B] text-xs sm:text-sm'>{value}</div>
+                <div className='text-[#C4501B] text-md '>{value}</div>
                 <div className='text-white/40 text-xs capitalize'>{key}</div>
               </div>
             ))}
           </div>
         </div>
       </motion.div>
-    </motion.div>
+    </motion.a>
   )
 }

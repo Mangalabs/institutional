@@ -1,15 +1,20 @@
 import { useState, useMemo } from 'react'
-import { projects, type Project } from '../data/projects.data'
+import { projectsData, type Project } from '../data/projects.data'
 
 export function useProjectFilter() {
-  const [activeFilter, setActiveFilter] = useState('Todos')
+  const [activeFilter, setActiveFilter] = useState<string>('all')
 
   const filteredProjects = useMemo(() => {
-    if (activeFilter === 'Todos') {
-      return projects
+    if (activeFilter === 'all') {
+      return projectsData.projects
     }
-    return projects.filter((p) => p.category === activeFilter)
+    return projectsData.projects.filter((p) => p.category === activeFilter)
   }, [activeFilter])
 
-  return { activeFilter, setActiveFilter, filteredProjects }
+  return {
+    activeFilter,
+    setActiveFilter,
+    filteredProjects,
+    filters: projectsData.filters,
+  }
 }
