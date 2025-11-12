@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import {
   ArrowRight,
   Rocket,
-  BarChart3,
   BadgeCheck,
   Heart,
   Lightbulb,
@@ -13,13 +12,13 @@ import { useState } from 'react'
 
 import { useScrollVisibility } from '../hooks/useScrollVisibility'
 
+import { projectsData } from '../data/projects.data'
 import {
   benefits,
   targetAudience,
   timeline,
   plans,
   successCases,
-  portfolio,
   testimonials,
 } from '../data/landingPages.data'
 
@@ -32,6 +31,9 @@ import { PortfolioCard } from '../components/landingPages/PortfolioCard'
 import { TestimonialCard } from '../components/landingPages/TestimonialCard'
 
 export function LandingPages() {
+   const featuredProjects = projectsData.projects.filter((p) =>
+    ['SalonSync Web', 'Senior Koster'].includes(p.title)
+  )
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null)
 
   const showCTA = useScrollVisibility(300)
@@ -152,14 +154,6 @@ export function LandingPages() {
               <Rocket size={20} className='relative z-10' />
               <span className='relative z-10'>Ver Pacotes</span>
               <ArrowRight size={20} className='relative z-10' />
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className='bg-[#143829]/10 backdrop-blur-sm border-2 border-[#143829]/20 hover:border-[#143829] text-[#143829] px-10 py-4 rounded-full font-semibold inline-flex items-center gap-2 transition-colors'>
-              <BarChart3 size={20} />
-              <span>Ver Cases de Sucesso</span>
             </motion.button>
           </motion.div>
 
@@ -416,13 +410,9 @@ export function LandingPages() {
           </motion.div>
 
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-            {portfolio.map((project, index) => (
-              <PortfolioCard
-                key={project.name}
-                project={project}
-                index={index}
-              />
-            ))}
+          {featuredProjects.map((project, index) => (
+            <PortfolioCard key={project.id} project={project} index={index} />
+          ))}
           </div>
         </div>
       </section>
@@ -683,7 +673,7 @@ export function LandingPages() {
         </div>
       </section>
 
-      <section className='py-20 sm:py-24 px-4 sm:px-6 bg-white'>
+      {/* <section className='py-20 sm:py-24 px-4 sm:px-6 bg-white'>
         <div className='max-w-7xl mx-auto'>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -708,7 +698,7 @@ export function LandingPages() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className='relative py-24 px-4 sm:px-6 bg-gradient-to-br from-[#E9972D] via-[#FDCD00] to-[#E9972D] overflow-hidden'>
         {[...Array(20)].map((_, i) => (

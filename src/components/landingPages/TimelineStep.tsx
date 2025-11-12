@@ -39,7 +39,7 @@ export function TimelineStep({ step, index, isLast }: TimelineStepProps) {
       </div>
 
       {!isLast && (
-        <div className='hidden lg:block absolute top-1/2 -right-3 z-10'>
+        <div className='hidden lg:block absolute top-1/2 -right-5 z-10'>
           <ArrowRight size={20} className='text-[#E9972D]' />
         </div>
       )}
