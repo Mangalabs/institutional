@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { type TeamMember } from '../../data/about.data'
-import { Linkedin, Github, Mail } from 'lucide-react'
+import { Linkedin, Mail } from 'lucide-react'
 
 interface TeamCardProps {
   member: TeamMember
