@@ -17,7 +17,9 @@ const Academy = lazy(() =>
   import('./pages/Academy').then((m) => ({ default: m.Academy }))
 )
 const LandingPages = lazy(() =>
-  import('./pages/LandingPages').then((m) => ({ default: m.LandingPages }))
+  import('./pages/LandingPages').then((m) => ({
+    default: m.LandingPages,
+  }))
 )
 const Projects = lazy(() => import('./pages/Projects'))
 
@@ -34,7 +36,7 @@ const PageLoader = () => (
   </div>
 )
 
-const PageTransitionWrapper = ({ children }: { children: React.ReactNode }) => {
+const AnimatedRoutes = () => {
   const location = useLocation()
 
   const variants = {
@@ -44,16 +46,26 @@ const PageTransitionWrapper = ({ children }: { children: React.ReactNode }) => {
   }
 
   return (
-    <AnimatePresence mode='wait' initial={false}>
+    <AnimatePresence mode='wait'>
       <motion.div
         key={location.pathname}
         variants={variants}
         initial='initial'
         animate='animate'
         exit='exit'
-        transition={{ duration: 0.1, ease: [0.3, 0, 0.2, 1] }}
+        transition={{ duration: 0.15, ease: [0.3, 0, 0.2, 1] }}
         className='relative min-h-screen'>
-        {children}
+        <Suspense fallback={<PageLoader />}>
+          <Routes location={location}>
+            <Route path='/' element={<Home />} />
+            <Route path='/academy' element={<Academy />} />
+            <Route path='/landing-pages' element={<LandingPages />} />
+            <Route path='/projects' element={<Projects />} />
+            <Route path='/about' element={<About />} />
+
+            <Route path='*' element={<Home />} />
+          </Routes>
+        </Suspense>
       </motion.div>
     </AnimatePresence>
   )
@@ -66,68 +78,7 @@ export default function App() {
       <div className='min-h-screen bg-[#143829]'>
         <Navbar />
 
-        <Routes>
-          <Route
-            path='/'
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <PageTransitionWrapper>
-                  <Home />
-                </PageTransitionWrapper>
-              </Suspense>
-            }
-          />
-          <Route
-            path='/academy'
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <PageTransitionWrapper>
-                  <Academy />
-                </PageTransitionWrapper>
-              </Suspense>
-            }
-          />
-          <Route
-            path='/landing-pages'
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <PageTransitionWrapper>
-                  <LandingPages />
-                </PageTransitionWrapper>
-              </Suspense>
-            }
-          />
-          <Route
-            path='/projects'
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <PageTransitionWrapper>
-                  <Projects />
-                </PageTransitionWrapper>
-              </Suspense>
-            }
-          />
-          <Route
-            path='/about'
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <PageTransitionWrapper>
-                  <About />
-                </PageTransitionWrapper>
-              </Suspense>
-            }
-          />
-          <Route
-            path='*'
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <PageTransitionWrapper>
-                  <Home />
-                </PageTransitionWrapper>
-              </Suspense>
-            }
-          />
-        </Routes>
+        <AnimatedRoutes />
 
         <Footer />
       </div>
