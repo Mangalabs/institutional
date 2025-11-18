@@ -1,6 +1,8 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowRight, CheckCircle, Mail, Rocket, TreePine } from 'lucide-react'
+import { ArrowRight, CheckCircle, Mail, MessageCircle, Rocket, TreePine } from 'lucide-react'
 import { useRef } from 'react'
+
+import { useContactActions } from '../hooks/useContactActions'
 
 import {
   ecosystem,
@@ -26,6 +28,8 @@ export function Home({ onNavigate }: HomeProps) {
     offset: ['start start', 'end end'],
   })
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
+
+  const { openWhatsApp, openEmail } = useContactActions()
 
   return (
     <div ref={containerRef} className='min-h-screen bg-[#0a1612]'>
@@ -164,8 +168,13 @@ export function Home({ onNavigate }: HomeProps) {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() =>
+                openWhatsApp(
+                  'Olá! Gostaria de falar com o time da MangaLab para tirar algumas dúvidas antes de começar.'
+                )
+              }
               className='bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#FDCD00]/30 text-white px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2'>
-              <Mail size={20} />
+              <MessageCircle size={20} />
               <span>Falar com time</span>
             </motion.button>
           </motion.div>
@@ -207,7 +216,6 @@ export function Home({ onNavigate }: HomeProps) {
           </motion.div>
 
           <div className='grid grid-cols-2 lg:grid-cols-4 gap-8'>
-            {/* Componente Refatorado */}
             {impactNumbers.map((stat, index) => (
               <ImpactCard key={stat.label} stat={stat} index={index} />
             ))}
@@ -359,7 +367,7 @@ export function Home({ onNavigate }: HomeProps) {
             <h2 className='text-white mb-6'>Pronto para crescer conosco?</h2>
             <p className='text-white/70 text-lg mb-10 mx-auto'>
               Seja formando talentos, criando produtos ou impulsionando seu
-              negócio — nós temos a solução perfeita para você.
+              negócio, nós temos a solução perfeita para você.
             </p>
 
             <div className='flex flex-col sm:flex-row gap-4 justify-center'>
@@ -369,8 +377,15 @@ export function Home({ onNavigate }: HomeProps) {
                   boxShadow: '0 20px 60px rgba(253, 205, 0, 0.4)',
                 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() =>
+                  openEmail(
+                    'Quero começar agora!',
+                    `Olá! Tenho interesse em iniciar meu projeto com a MangaLab. 
+                      Poderiam me ajudar a dar os primeiros passos?`
+                  )
+                }
                 className='bg-gradient-to-r from-[#FDCD00] to-[#E9972D] text-[#143829] px-10 py-4 rounded-full font-bold inline-flex items-center justify-center gap-2 shadow-2xl'>
-                <Rocket size={20} />
+                <Mail size={20} />
                 <span>Começar agora</span>
                 <ArrowRight size={20} />
               </motion.button>
@@ -378,9 +393,14 @@ export function Home({ onNavigate }: HomeProps) {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() =>
+                  openWhatsApp(
+                    'Olá! Gostaria de conversar com um especialista da MangaLab para entender melhor como vocês podem me ajudar.'
+                  )
+                }
                 className='bg-white/10 backdrop-blur-sm border border-white/20 hover:border-[#FDCD00]/30 text-white px-10 py-4 rounded-full font-semibold inline-flex items-center justify-center gap-2'>
-                <Mail size={20} />
-                <span>Falar com time</span>
+                <MessageCircle size={20} />
+                <span>Falar com especialistas</span>
               </motion.button>
             </div>
 

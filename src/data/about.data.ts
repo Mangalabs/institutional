@@ -69,34 +69,34 @@ export interface CallToAction {
   buttonText: string
   buttonIcon: LucideIcon | 'Sparkles'
   style: 'primary' | 'secondary'
+  whatsappMessage: string | undefined
 }
 
 export const metrics: Metric[] = [
-{
-  value: '150+',
-  label: 'Projetos entregues para marcas globais',
-  icon: Rocket,
-  color: '#FDCD00',
-},
-{
-  value: '500k+',
-  label: 'Pessoas impactadas todos os dias',
-  icon: Globe,
-  color: '#E9972D',
-},
-{
-  value: '98%',
-  label: 'Índice de satisfação dos clientes',
-  icon: Star,
-  color: '#C4501B',
-},
-{
-  value: '120+',
-  label: 'Vidas transformadas pela Academy',
-  icon: Heart,
-  color: '#2B5B3F',
-},
-
+  {
+    value: '150+',
+    label: 'Projetos entregues para marcas globais',
+    icon: Rocket,
+    color: '#FDCD00',
+  },
+  {
+    value: '500k+',
+    label: 'Pessoas impactadas todos os dias',
+    icon: Globe,
+    color: '#E9972D',
+  },
+  {
+    value: '98%',
+    label: 'Índice de satisfação dos clientes',
+    icon: Star,
+    color: '#C4501B',
+  },
+  {
+    value: '120+',
+    label: 'Vidas transformadas pela Academy',
+    icon: Heart,
+    color: '#2B5B3F',
+  },
 ]
 
 export const dna: DnaItem[] = [
@@ -228,7 +228,8 @@ export const teamMembers: TeamMember[] = [
   {
     name: 'Thicianny Marques',
     role: 'Dev & Co-Fundadora',
-    description: 'Especializada em construir aplicações sofisticadas, elegantes e de alto impacto. ',
+    description:
+      'Especializada em construir aplicações sofisticadas, elegantes e de alto impacto. ',
     image: 'thicianny-marques.jpeg',
     imageBgGradient: 'from-[#14A2B6]/20 to-[#0D7A8A]/20',
     color: '#14A2B6',
@@ -245,7 +246,6 @@ export const teamMembers: TeamMember[] = [
   },
 ]
 
-
 export const finalCtaCards: CallToAction[] = [
   {
     id: 'empresas',
@@ -256,6 +256,8 @@ export const finalCtaCards: CallToAction[] = [
     buttonText: 'Agende uma conversa',
     buttonIcon: ArrowRight,
     style: 'primary',
+    whatsappMessage:
+      'Olá! Tenho interesse em soluções para empresas. Podemos conversar?',
   },
   {
     id: 'talentos',
@@ -266,5 +268,7 @@ export const finalCtaCards: CallToAction[] = [
     buttonText: 'Ver vagas abertas',
     buttonIcon: 'Sparkles',
     style: 'secondary',
+    whatsappMessage:
+      'Olá! Gostaria de saber mais sobre oportunidades e vagas na MangaLab!',
   },
 ]

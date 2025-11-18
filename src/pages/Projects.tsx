@@ -1,14 +1,18 @@
 import { motion } from 'framer-motion'
-import { Filter, ExternalLink } from 'lucide-react'
+import { Filter, ExternalLink, Zap, MessageCircle } from 'lucide-react'
 
 import { capabilities } from '../data/projects.data'
 import { useProjectFilter } from '../hooks/useProjectFilter'
 import { CapabilityCard } from '../components/projects/CapabilityCard'
 import { ProjectCard } from '../components/projects/ProjectCard'
+import { Mail } from 'lucide-react'
+import { useContactActions } from '../hooks/useContactActions'
 
 export default function Projects() {
   const { activeFilter, setActiveFilter, filteredProjects, filters } =
     useProjectFilter()
+
+  const { openWhatsApp } = useContactActions()
 
   return (
     <div className='min-h-screen pt-20'>
@@ -39,9 +43,7 @@ export default function Projects() {
                 'linear-gradient(135deg, #C4501B 0%, transparent 100%)',
               clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)',
             }}
-            animate={{
-              scale: [1, 1.2, 1],
-            }}
+            animate={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
           />
           <motion.div
@@ -52,9 +54,7 @@ export default function Projects() {
               clipPath:
                 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)',
             }}
-            animate={{
-              scale: [1, 1.1, 1],
-            }}
+            animate={{ scale: [1, 1.1, 1] }}
             transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
           />
         </div>
@@ -63,7 +63,8 @@ export default function Projects() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}>
+            transition={{ duration: 0.6 }}
+          >
             <h1 className='text-white mb-4 sm:mb-6 px-4'>
               Projetos que{' '}
               <span className='relative inline-block'>
@@ -105,7 +106,8 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className='mb-8 sm:mb-12'>
+            className='mb-8 sm:mb-12'
+          >
             <div className='flex items-center justify-center gap-2 sm:gap-3 flex-wrap'>
               <Filter size={18} className='text-white/60 sm:w-5 sm:h-5' />
               {filters.map((filter) => (
@@ -118,7 +120,8 @@ export default function Projects() {
                     activeFilter === filter.id
                       ? 'bg-[#C4501B] text-white'
                       : 'bg-white/5 text-white/60 hover:bg-white/10'
-                  }`}>
+                  }`}
+                >
                   {filter.label}
                 </motion.button>
               ))}
@@ -127,7 +130,8 @@ export default function Projects() {
 
           <motion.div
             layout
-            className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8'>
+            className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8'
+          >
             {filteredProjects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
@@ -140,19 +144,26 @@ export default function Projects() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}>
+            viewport={{ once: true }}
+          >
             <h2 className='text-white mb-4 sm:mb-6 px-4'>
               Pronto para criar algo incrível?
             </h2>
             <p className='text-white/70 text-base sm:text-xl mb-6 sm:mb-8 px-4'>
               Vamos transformar sua ideia em um produto digital de sucesso.
             </p>
+
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() =>
+                openWhatsApp(
+                  'Olá! Gostaria de falar com o time da MangaLab para entender como vocês podem me ajudar.'
+                )
+              }
               className='bg-[#C4501B] hover:bg-[#E9972D] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full inline-flex items-center gap-2 transition-colors text-sm sm:text-base'>
-              <span>Iniciar projeto</span>
-              <ExternalLink size={20} />
+              <MessageCircle size={20} />
+              <span>Falar com time</span>
             </motion.button>
           </motion.div>
         </div>

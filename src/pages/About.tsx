@@ -24,6 +24,8 @@ import { GlobalFeatureCard } from '../components/about/GlobalFeatureCard'
 import { TeamCard } from '../components/about/TeamCard'
 import { CtaCard } from '../components/about/CtaCard'
 
+import { useContactActions } from '../hooks/useContactActions'
+
 export function About() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
@@ -32,6 +34,8 @@ export function About() {
   })
 
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
+
+  const { openWhatsApp, openEmail } = useContactActions()
 
   return (
     <div
@@ -185,6 +189,11 @@ export function About() {
             </motion.button>
 
             <motion.button
+              onClick={() =>
+                openEmail(
+                  'Olá! Gostaria de saber mais sobre como podemos trabalhar juntos. Poderiam me ajudar?'
+                )
+              }
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className='bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#FDCD00]/30 text-white px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2'>
@@ -637,7 +646,12 @@ export function About() {
 
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
             {finalCtaCards.map((cta, index) => (
-              <CtaCard key={cta.id} cta={cta} index={index} />
+              <CtaCard
+                key={cta.id}
+                cta={cta}
+                index={index}
+                onClick={() => openWhatsApp(cta.whatsappMessage)}
+              />
             ))}
           </div>
 
