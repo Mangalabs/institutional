@@ -8,7 +8,7 @@ export const contactData = {
     {
       icon: '📱',
       title: 'WhatsApp',
-      content: '(85) 981263142',
+      content: '(41) 987306000',
     },
     {
       icon: '📍',
