@@ -1,38 +1,43 @@
 import { motion } from 'framer-motion'
-import { type MethodologyItem } from '../../data/academy.data'
+import { LucideIcon } from 'lucide-react'
 
 interface MethodologyCardProps {
-  item: MethodologyItem
-  index: number
+  step: string
+  icon: LucideIcon
+  title: string
+  description: string
+  delay?: number
+  isRightSide?: boolean
 }
 
-export function MethodologyCard({ item, index }: MethodologyCardProps) {
-  const Icon = item.icon
-
+export function MethodologyCard({
+  step,
+  icon: Icon,
+  title,
+  description,
+  delay = 0,
+  isRightSide = false,
+}: MethodologyCardProps) {
   return (
     <motion.div
-      key={item.title}
-      initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+      initial={{ opacity: 0, x: isRightSide ? -30 : 30 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.15, type: 'spring' }}
-      whileHover={{ scale: 1.03, y: -5 }}
-      className='group relative'
-    >
-      <div className='relative bg-white/70 backdrop-blur-sm border border-[#B6461B]/10 hover:border-[#B6461B]/30 rounded-3xl p-8 shadow-lg transition-all'>
-        <motion.div
-          className='w-16 h-16 rounded-2xl flex items-center justify-center mb-5'
-          style={{
-            background: `linear-gradient(135deg, ${item.color}20, ${item.color}05)`,
-          }}
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <Icon size={32} style={{ color: item.color }} />
-        </motion.div>
-
-        <h3 className='text-[#143829] text-2xl font-bold mb-3'>{item.title}</h3>
-        <p className='text-[#143829]/70 leading-relaxed'>{item.description}</p>
+      transition={{ delay }}
+      className='relative bg-white border-l-4 border-orange-500 rounded-lg p-6 shadow-md hover:shadow-lg transition-all'>
+      <div className='flex items-start gap-4'>
+        <div className='flex-shrink-0'>
+          <div className='w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center'>
+            <Icon className='text-orange-600' size={24} />
+          </div>
+        </div>
+        <div>
+          <div className='text-orange-600 font-black text-sm mb-1'>{step}</div>
+          <h3 className='text-slate-900 font-bold mb-2'>{title}</h3>
+          <p className='text-slate-600 text-sm leading-relaxed'>
+            {description}
+          </p>
+        </div>
       </div>
     </motion.div>
   )

@@ -1,58 +1,73 @@
 import { motion } from 'framer-motion'
-import { type ImpactStat } from '../../data/academy.data'
-import { AnimatedCounter } from '../common/AnimatedCounter'
+import { TrendingUp, CheckCircle2 } from 'lucide-react'
 
 interface ImpactStatCardProps {
-  stat: ImpactStat
-  index: number
+  type: 'stats' | 'economic'
+  delay?: number
 }
 
-export function ImpactStatCard({ stat, index }: ImpactStatCardProps) {
-  const Icon = stat.icon
+export function ImpactStatCard({ type, delay = 0 }: ImpactStatCardProps) {
+  if (type === 'stats') {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay }}
+        className='bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 rounded-3xl p-10 shadow-2xl text-white relative overflow-hidden'>
+        <div className='absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl' />
+        <div className='relative space-y-1'>
+          <div>
+            <div className='text-2xl font-black'>50%</div>
+            <div className='text-orange-100 text-lg'>
+              Taxa de Empregabilidade
+            </div>
+          </div>
+          <div className='border-t border-white/30 pt-4'>
+            <div className='text-2xl font-black'>7</div>
+            <div className='text-orange-100 text-lg'>Bolsas Oferecidas</div>
+          </div>
+          <div className='border-t border-white/30 pt-4'>
+            <div className='text-2xl font-black'>2</div>
+            <div className='text-orange-100 text-lg'>Projetos em Andamento</div>
+          </div>
+        </div>
+      </motion.div>
+    )
+  }
+
+  const points = [
+    'Oferece serviços de qualidade e acessíveis a PMEs',
+    'Gera oportunidades de trabalho qualificado',
+    'Fortalece o ecossistema tecnológico regional',
+  ]
 
   return (
     <motion.div
-      key={stat.label}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{
-        delay: index * 0.1,
-        type: 'spring',
-        stiffness: 100,
-      }}
-      whileHover={{ y: -10, scale: 1.03 }}
-      className='group relative'
-    >
-      <div className='relative bg-white/80 backdrop-blur-md border border-[#B6461B]/10 hover:border-[#B6461B]/30 rounded-3xl p-8 text-center shadow-xl transition-all'>
-        <motion.div
-          className='absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500'
-          style={{
-            background: `radial-gradient(circle at center, ${stat.color}10 0%, transparent 70%)`,
-          }}
-        />
-
-        <motion.div
-          className='relative w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center'
-          style={{
-            background: `linear-gradient(135deg, ${stat.color}20, ${stat.color}05)`,
-          }}
-          transition={{ duration: 0.6 }}
-        >
-          <Icon size={32} style={{ color: stat.color }} />
-        </motion.div>
-
-        <div
-          className='text-5xl sm:text-6xl font-black mb-2'
-          style={{ color: stat.color }}
-        >
-          <AnimatedCounter value={stat.value} />
+      transition={{ duration: 0.6, delay }}
+      className='bg-white border-2 border-slate-200 rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:border-orange-300 transition-all duration-500 '>
+      <div className='flex items-center gap-4 mb-6'>
+        <div className='size-14 flex-none bg-gradient-to-br from-orange-100 to-orange-50 rounded-2xl flex items-center justify-center'>
+          <TrendingUp className='text-orange-600' size={26} />
         </div>
-        <div className='text-[#143829] font-semibold mb-3'>{stat.label}</div>
-        <p className='text-[#143829]/60 text-sm leading-relaxed'>
-          {stat.description}
-        </p>
+        <h3 className='text-slate-900  text-3xl'>Desenvolvimento Econômico</h3>
       </div>
+      <ul className='space-y-2'>
+        {points.map((item, i) => (
+          <li
+            key={i}
+            className='flex items-start gap-3 text-slate-600 text-base'>
+            <CheckCircle2
+              size={18}
+              className='text-orange-600 flex-shrink-0 mt-2'
+            />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
     </motion.div>
   )
 }

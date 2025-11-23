@@ -18,7 +18,7 @@ export function Navbar() {
 
   const navItems = [
     { path: '/', label: 'Home' },
-    { path: '/academy', label: 'Academy' },
+    // { path: '/academy', label: 'Academy' },
     { path: '/landing-pages', label: 'Landing Pages' },
     { path: '/projects', label: 'Projetos' },
     { path: '/about', label: 'Sobre' },
@@ -126,7 +126,7 @@ export function Navbar() {
                     to='/investir'
                     onClick={() => setIsMobileMenuOpen(false)}
                     className='block w-full bg-[#E9972D] text-white px-4 py-3 rounded-full'>
-                    Investir na Academy
+                    Saiba Mais
                   </Link>
                 </motion.div>
               </div>

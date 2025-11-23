@@ -1,52 +1,35 @@
 import { motion } from 'framer-motion'
-import { type Testimonial } from '../../data/academy.data'
-import { MapPin } from 'lucide-react'
+import { Heart } from 'lucide-react'
 
-interface TestimonialCardProps {
-  testimonial: Testimonial
-  index: number
-}
-
-export function TestimonialCard({
-  testimonial,
-  index,
-}: TestimonialCardProps) {
+export function TestimonialCard() {
   return (
     <motion.div
-      key={testimonial.name}
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.2, type: 'spring' }}
-      whileHover={{ y: -10 }}
-      className='group relative'
-    >
-      <div className='relative bg-white/80 backdrop-blur-md border border-[#B6461B]/10 hover:border-[#FDCD00] rounded-3xl p-8 shadow-xl transition-all h-full'>
-        <div className='mb-6 relative'>
-          <motion.div
-            className='absolute -bottom-2 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#B6461B] to-[#FDCD00] text-white text-xs px-3 py-1 rounded-full font-semibold whitespace-nowrap'
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.2 + 0.3 }}
-          >
-            {testimonial.role}
-          </motion.div>
-        </div>
-
-        <p className='text-[#143829]/80 italic mb-6 leading-relaxed text-sm'>
-          "{testimonial.quote}"
-        </p>
-
-        <div className='border-t border-[#B6461B]/10 pt-4'>
-          <div className='font-bold text-[#143829]'>{testimonial.name}</div>
-          <div className='text-[#B6461B] text-sm flex items-center gap-1 justify-center mt-1'>
-            <MapPin size={14} />
-            <span>{testimonial.from}</span>
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className='lg:col-span-2 relative rounded-3xl overflow-hidden shadow-2xl group'>
+      <img
+        src='https://images.unsplash.com/photo-1752650735943-d0fbf1edce21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwY29sbGFib3JhdGlvbiUyMHdvcmtzcGFjZXxlbnwxfHx8fDE3NjM0MTE4NDB8MA&ixlib=rb-4.1.0&q=80&w=1080'
+        alt='Time colaborando'
+        className='w-full object-cover transition-transform duration-700 group-hover:scale-110'
+      />
+      <div className='absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-transparent' />
+      <div className='absolute inset-0 flex items-center p-10'>
+        <div className=''>
+          <div className='inline-flex items-center gap-3 bg-orange-600/95 backdrop-blur-md rounded-full px-6 py-3 mb-6 shadow-lg'>
+            <Heart size={24} className='text-white' />
+            <span className='text-white font-bold text-lg'>
+              Impacto Mensurável
+            </span>
           </div>
-          <div className='text-[#FDCD00] text-xs mt-2 font-semibold'>
-            {testimonial.highlight}
-          </div>
+          <h3 className='text-white text-4xl font-black mb-4'>
+            Transformando Vidas
+          </h3>
+          <p className='text-white/95 text-xl leading-relaxed'>
+            Cada aluno formado representa uma família impactada positivamente e
+            uma comunidade mais forte.
+          </p>
         </div>
       </div>
     </motion.div>

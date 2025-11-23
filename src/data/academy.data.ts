@@ -1,257 +1,170 @@
 import {
-  type LucideIcon,
   Users,
-  Briefcase,
-  HeartHandshake,
-  Heart,
-  Globe,
-  Award,
-  Compass,
-  Building2,
-  Target,
   Code,
-  GraduationCap,
+  BookOpen,
+  Award,
+  Heart,
+  Target,
+  Rocket,
 } from 'lucide-react'
 
-export interface ImpactStat {
-  value: string
-  label: string
-  description: string
-  icon: LucideIcon
-  color: string
-}
-
-export interface MethodologyItem {
-  icon: LucideIcon
-  title: string
-  description: string
-  color: string
-}
-
-export interface Testimonial {
-  name: string
-  from: string
-  role: string
-  photo: string
-  quote: string
-  highlight: string
-}
-
-export interface TimelineEvent {
-  year: string
-  title: string
-  description: string
-  color: string
-}
-
-export interface BrazilState {
-  name: string
-  students: number
-  top: string
-  left: string
-}
-
-export interface GrowthOption {
-  icon: LucideIcon
-  title: string
-  description: string
-  color: string
-}
-
-export interface MentorshipFeature {
-  icon: LucideIcon
-  title: string
-  description: string
-  color: string
-}
-
-export const impactStats: ImpactStat[] = [
-{
-  value: '20+',
-  label: 'talentos preparados',
-  description:
-    'Jovens que concluíram a imersão e estão prontos para iniciar sua jornada profissional.',
-  icon: Users,
-  color: '#B6461B',
-},
-{
-  value: '5+',
-  label: 'projetos reais no portfólio',
-  description:
-    'Soluções aplicadas que demonstram na prática a capacidade técnica para o mercado.',
-  icon: Briefcase,
-  color: '#FDCD00',
-},
-{
-  value: '10+',
-  label: 'mentores conectados',
-  description:
-    'Profissionais experientes e empresas parceiras engajados na formação dos talentos.',
-  icon: HeartHandshake,
-  color: '#E9972D',
-},
-{
-  value: '12',
-  label: 'semanas de imersão prática',
-  description:
-    'Experiência completa e intensa, com foco em criar portfólio e  simular o dia a dia do desenvolvedor.',
-  icon: Heart,
-  color: '#2B5B3F',
-},
+export const galleryImages = [
+  {
+    url: 'https://images.unsplash.com/photo-1759884248009-92c5e957708e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGxlYXJuaW5nJTIwY29kaW5nfGVufDF8fHx8MTc2MzQ5NzU5M3ww&ixlib=rb-4.1.0&q=80&w=1080',
+    title: 'Aprendizado Prático',
+    description: 'Estudantes em aulas práticas de programação',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1652305500057-0fcb348b62aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHN0dWR5aW5nJTIwdG9nZXRoZXJ8ZW58MXx8fHwxNzYzMzk3NTc3fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    title: 'Colaboração',
+    description: 'Trabalho em equipe e networking',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1558301204-e3226482a77b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2RpbmclMjB3b3Jrc2hvcCUyMHRyYWluaW5nfGVufDF8fHx8MTc2MzQ5ODE5OXww&ixlib=rb-4.1.0&q=80&w=1080',
+    title: 'Workshops',
+    description: 'Sessões práticas e workshops intensivos',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1512238972088-8acb84db0771?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZW50b3IlMjBzdHVkZW50JTIwbGVhcm5pbmd8ZW58MXx8fHwxNzYzNDk4MjAwfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    title: 'Mentoria',
+    description: 'Acompanhamento individualizado',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1648915880517-64a029f4194a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmFkdWF0aW9uJTIwY2VyZW1vbnklMjBjZWxlYnJhdGlvbnxlbnwxfHx8fDE3NjM0MzIxNDh8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    title: 'Formatura',
+    description: 'Celebração das conquistas',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1758691737584-a8f17fb34475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwc3VjY2VzcyUyMGNlbGVicmF0aW9ufGVufDF8fHx8MTc2MzQ5MDkwMXww&ixlib=rb-4.1.0&q=80&w=1080',
+    title: 'Sucesso',
+    description: 'Times comemorando entregas',
+  },
 ]
 
-export const methodology: MethodologyItem[] = [
+export const heroStats = [
+  { value: '7', label: 'Alunos' },
+  { value: '100%', label: 'Gratuito' },
+  { value: '12', label: 'Semanas' },
+]
+
+export const missionVisionData = [
   {
-    icon: Heart,
-    title: 'Projetos que importam',
+    type: 'mission',
+    icon: Target,
+    title: 'Missão',
     description:
-      'Você aprende construindo soluções reais que impactam pessoas reais. Nada de teoria abstrata.',
-    color: '#B6461B',
+      'Promover a formação de novos profissionais de tecnologia por meio da prática supervisionada em projetos reais, gerando empregabilidade, experiência e transformação social.',
+    variant: 'orange' as const,
   },
+  {
+    type: 'vision',
+    icon: Rocket,
+    title: 'Visão',
+    description:
+      'Ser reconhecido como um dos principais programas de formação prática em tecnologia no Brasil, contribuindo para o desenvolvimento de talentos e a inserção profissional.',
+    variant: 'white' as const,
+  },
+]
+
+export const odsData = [
+  {
+    number: '4',
+    title: 'Educação de Qualidade',
+    color: 'from-red-500 to-red-600',
+  },
+  {
+    number: '5',
+    title: 'Igualdade de Gênero',
+    color: 'from-orange-500 to-orange-600',
+  },
+  {
+    number: '8',
+    title: 'Trabalho Decente e Crescimento',
+    color: 'from-orange-600 to-orange-700',
+  },
+]
+
+export const methodologySteps = [
+  {
+    step: '01',
+    icon: Users,
+    title: 'Seleção e Mentoria',
+    description:
+      'Jovens desenvolvedores passam por um processo seletivo e recebem uma trilha personalizada de aprendizagem.',
+  },
+  {
+    step: '02',
+    icon: Code,
+    title: 'Experiência Real',
+    description:
+      'Os participantes atuam em projetos reais de clientes, aplicando conhecimentos sob supervisão técnica.',
+  },
+  {
+    step: '03',
+    icon: BookOpen,
+    title: 'Formação Contínua',
+    description:
+      'O programa combina aulas técnicas, revisões de código, soft skills e práticas ágeis.',
+  },
+  {
+    step: '04',
+    icon: Award,
+    title: 'Certificação e Indicação',
+    description:
+      'Ao final, os participantes recebem certificação e podem ser indicados para vagas em tecnologia.',
+  },
+]
+
+export const partnershipBenefits = [
   {
     icon: Users,
-    title: 'Mentoria de verdade',
+    title: 'Acesso a Talentos',
     description:
-      'Profissionais que se importam guiam cada passo. Você nunca está sozinho nessa jornada.',
-    color: '#FDCD00',
+      'Prioridade para contratar profissionais capacitados com experiência prática comprovada',
   },
   {
-    icon: Briefcase,
-    title: 'Empregabilidade com propósito',
+    icon: Heart,
+    title: 'Impacto Social',
     description:
-      'Não formamos apenas programadores. Formamos profissionais prontos para mudar suas vidas.',
-    color: '#E9972D',
-  },
-  {
-    icon: Globe,
-    title: 'Conexão com o mundo',
-    description:
-      'Do Norte do Brasil para qualquer lugar. Seus talentos não têm fronteiras.',
-    color: '#B6461B',
-  },
-]
-
-export const testimonials: Testimonial[] = [
-  {
-    name: 'Maria Silva',
-    from: 'Belém, PA',
-    role: 'Frontend Developer',
-    photo:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400',
-    quote:
-      'Eu vim de uma família que nunca imaginou ter alguém trabalhando com tecnologia. Hoje sustento minha casa e ajudo meus irmãos a estudar. A MangaAcademy não mudou só minha carreira, mudou minha vida inteira.',
-    highlight: 'De auxiliar de limpeza a desenvolvedora',
-  },
-  {
-    name: 'João Santos',
-    from: 'Manaus, AM',
-    role: 'Fullstack Developer',
-    photo:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400',
-    quote:
-      'Cresci na periferia sem acesso a nada. A MangaAcademy me deu algo que ninguém nunca me deu: uma chance real. Hoje trabalho remotamente e ajudo a criar oportunidades para outros jovens.',
-    highlight: 'Do sonho impossível à realidade',
-  },
-  {
-    name: 'Ana Costa',
-    from: 'Santarém, PA',
-    role: 'Backend Developer',
-    photo:
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400',
-    quote:
-      'Eu não sabia nem o que era programação. Hoje escrevo código que impacta milhares de pessoas todos os dias. Aprendi que não importa de onde você vem, mas pra onde você quer ir.',
-    highlight: 'De zero a desenvolvedora em 12 semanas',
-  },
-]
-
-export const timeline: TimelineEvent[] = [
-  {
-    year: '2020',
-    title: 'O Começo',
-    description:
-      'Tudo começou em Belém, com um grupo de mentores querendo democratizar o acesso à tecnologia no Norte do Brasil.',
-    color: '#B6461B',
-  },
-  {
-    year: '2021',
-    title: 'Primeira Turma',
-    description:
-      '12 alunos, 100% de empregabilidade. A prova de que o modelo funcionava e poderia mudar vidas.',
-    color: '#FDCD00',
-  },
-  {
-    year: '2022',
-    title: 'Expansão Nacional',
-    description:
-      'Alunos de todo o Norte e Nordeste. O movimento começou a ganhar força e identidade nacional.',
-    color: '#E9972D',
-  },
-  {
-    year: '2023',
-    title: 'Impacto Real',
-    description:
-      'Mais de 100 vidas transformadas. Famílias inteiras impactadas. O movimento se tornou uma realidade.',
-    color: '#B6461B',
-  },
-  {
-    year: '2024',
-    title: 'Visão de Futuro',
-    description:
-      'Hoje somos referência em educação tech com impacto social. O objetivo? Transformar 1000 vidas até 2026.',
-    color: '#FDCD00',
-  },
-]
-
-export const brazilStates: BrazilState[] = [
-  { name: 'Pará', students: 45, top: '42%', left: '45%' },
-  { name: 'Amazonas', students: 28, top: '38%', left: '32%' },
-  { name: 'Maranhão', students: 18, top: '35%', left: '52%' },
-  { name: 'Ceará', students: 15, top: '30%', left: '58%' },
-  { name: 'Bahia', students: 12, top: '48%', left: '60%' },
-]
-
-export const growthOptions: GrowthOption[] = [
-  {
-    icon: Award,
-    title: 'Aperfeiçoamento Profissional',
-    description:
-      'Mentorias e trilhas avançadas para quem já está na área e quer subir de nível técnico e estratégico.',
-    color: '#B6461B',
-  },
-  {
-    icon: Compass,
-    title: 'Migração de Carreira',
-    description:
-      'Para quem quer começar do zero, mudar de área e mergulhar de cabeça no mundo da tecnologia com propósito.',
-    color: '#FDCD00',
-  },
-  {
-    icon: Building2,
-    title: 'Mentoria Corporativa',
-    description:
-      'Empresas que querem capacitar seus times com nossa metodologia prática, humana e inclusiva.',
-    color: '#E9972D',
-  },
-]
-
-export const mentorshipFeatures: MentorshipFeature[] = [
-  {
-    icon: Target,
-    title: 'Diagnóstico e desenho personalizado',
-    description: 'Entendemos as necessidades únicas do seu time',
-    color: '#B6461B',
+      'Associe sua marca a um projeto de impacto social e inovação tecnológica mensurável',
   },
   {
     icon: Code,
-    title: 'Aulas e projetos reais da empresa',
+    title: 'Projetos Acessíveis',
     description:
-      'Aprendizado aplicado direto nos desafios do negócio',
-    color: '#FDCD00',
-  },
-  {
-    icon: GraduationCap,
-    title: 'Acompanhamento com mentores seniores',
-    description: 'Expertise e humanidade em cada etapa do processo',
-    color: '#E9972D',
+      'Desenvolva soluções de software com valores reduzidos e acompanhamento profissional',
   },
 ]
+
+export const economicImpactPoints = [
+  'Oferece serviços de qualidade e acessíveis a PMEs',
+  'Gera oportunidades de trabalho qualificado',
+  'Fortalece o ecossistema tecnológico regional',
+]
+
+export const locations = ['São Luís - MA', 'Curitiba - PR', 'Eusébio - CE']
+
+export const heroData = {
+  title: {
+    main: 'Mangalab',
+    highlight: 'Academy',
+  },
+  description: {
+    text: 'Formação de desenvolvedores através de',
+    highlight: 'experiências reais de mercado',
+    suffix: ', com trilha prática supervisionada em projetos reais.',
+  },
+  buttons: {
+    primary: { text: 'Conhecer o Programa', link: '#programa' },
+    secondary: { text: 'Fale Conosco', link: '#contato' },
+  },
+  waveAnimation: {
+    initial:
+      'M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,181.3C672,192,768,160,864,138.7C960,117,1056,107,1152,122.7C1248,139,1344,181,1392,202.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z',
+    frames: [
+      'M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,181.3C672,192,768,160,864,138.7C960,117,1056,107,1152,122.7C1248,139,1344,181,1392,202.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z',
+      'M0,192L48,181.3C96,171,192,149,288,149.3C384,149,480,171,576,192C672,213,768,235,864,224C960,213,1056,171,1152,154.7C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z',
+      'M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,181.3C672,192,768,160,864,138.7C960,117,1056,107,1152,122.7C1248,139,1344,181,1392,202.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z',
+    ],
+  },
+}
