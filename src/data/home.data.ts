@@ -164,7 +164,7 @@ export const dna: DnaItem[] = [
     icon: Sparkles,
     title: 'Disrupção & Ousadia',
     description:
-      'Quebramos padrões, desafiamos o status quo e criamos soluções que rompem limites.',
+      'Transformamos o que parece impossível em novas oportunidades, sem medo de ir além.',
     color: '#E9972D',
   },
   {
