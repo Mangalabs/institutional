@@ -1,5 +1,5 @@
 import {
-  type LucideIcon,
+  Zap,
   Clock,
   Palette,
   Code,
@@ -9,13 +9,15 @@ import {
   Target,
   Users,
   Briefcase,
-  Sparkles,
   Rocket,
   BarChart3,
-  MessageSquare,
-  Trophy,
+  CheckCircle2,
   DollarSign,
-  Gift,
+  Sparkles,
+  Trophy,
+  MessageSquare,
+  BadgeCheck,
+  LucideIcon,
 } from 'lucide-react'
 
 export interface Benefit {
@@ -33,7 +35,7 @@ export interface Audience {
   color: string
 }
 
-export interface TimelineStep {
+export interface TimelineItem {
   step: string
   title: string
   description: string
@@ -41,19 +43,19 @@ export interface TimelineStep {
   detail: string
 }
 
-export interface PricingPlan {
+export interface Plan {
   name: string
   price: string
   originalPrice?: string
   description: string
   features: string[]
-  bonus?: string
   highlight: boolean
   icon: LucideIcon
   color: string
+  bonus?: string
 }
 
-export interface SuccessCase {
+export interface SuccessMetric {
   metric: string
   label: string
   description: string
@@ -61,7 +63,7 @@ export interface SuccessCase {
 }
 
 export interface PortfolioItem {
-  name: string
+  title: string
   category: string
   color: string
   before: string
@@ -69,6 +71,7 @@ export interface PortfolioItem {
   result: string
   metric: string
   startedFromZero: boolean
+  image: string
 }
 
 export interface Testimonial {
@@ -153,24 +156,24 @@ export const targetAudience: Audience[] = [
   },
 ]
 
-export const timeline: TimelineStep[] = [
+export const timeline: TimelineItem[] = [
   {
     step: '1',
     title: 'Briefing',
-    description: '30min de call para entender seu negócio',
+    description: 'Conversa inicial',
     icon: MessageSquare,
     detail: 'Conversamos sobre sua visão, objetivos e público-alvo',
   },
   {
     step: '2',
     title: 'Design',
-    description: 'Mockup em 48h para aprovação',
+    description: 'Prototipo',
     icon: Palette,
     detail: 'Você visualiza tudo antes de começarmos a programar',
   },
   {
     step: '3',
-    title: 'Criação',
+    title: 'Desenvolvimento',
     description: 'Código e deploy em 5 dias',
     icon: Code,
     detail: 'Desenvolvemos com as melhores tecnologias do mercado',
@@ -184,7 +187,7 @@ export const timeline: TimelineStep[] = [
   },
 ]
 
-export const plans: PricingPlan[] = [
+export const plans: Plan[] = [
   {
     name: 'Start',
     price: 'R$ 1.350',
@@ -200,7 +203,7 @@ export const plans: PricingPlan[] = [
       'Entrega em até 7 dias',
     ],
     highlight: false,
-    icon: BarChart3,
+    icon: Zap,
     color: '#FDCD00',
   },
   {
@@ -234,11 +237,11 @@ export const plans: PricingPlan[] = [
     ],
     highlight: false,
     icon: Sparkles,
-    color: '#143829',
+    color: '#56A97A',
   },
 ]
 
-export const successCases: SuccessCase[] = [
+export const successCases: SuccessMetric[] = [
   {
     metric: '+340%',
     label: 'Aumento em conversões',
@@ -259,29 +262,6 @@ export const successCases: SuccessCase[] = [
   },
 ]
 
-export const portfolio: PortfolioItem[] = [
-  {
-    name: 'TechStartup',
-    category: 'SaaS',
-    color: '#831CED',
-    before: 'Sem presença digital',
-    problem: 'Startup sem site, perdendo clientes para concorrentes',
-    result: '127% de conversão em trials gratuitos no primeiro mês',
-    metric: '+127%',
-    startedFromZero: true,
-  },
-  {
-    name: 'BelemEats',
-    category: 'Food',
-    color: '#E9972D',
-    before: 'Apenas Instagram',
-    problem:
-      'Só divulgava no Instagram, sem forma de capturar pedidos online',
-    result: '85% de aumento em pedidos diretos pelo site em 30 dias',
-    metric: '+85%',
-    startedFromZero: true,
-  },
-]
 
 export const testimonials: Testimonial[] = [
   {
