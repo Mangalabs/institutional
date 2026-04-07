@@ -2,16 +2,21 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/webp" href="/icon.webp" />
+    <link rel="icon" type="image/webp" href="/icon-manga.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mangalab</title>
 
     <script>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-TSLVBW6J');
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-TSLVBW6J')
     </script>
   </head>
 
@@ -21,9 +26,8 @@
         src="https://www.googletagmanager.com/ns.html?id=GTM-TSLVBW6J"
         height="0"
         width="0"
-        style="display:none;visibility:hidden"
-        title="Google Tag Manager"
-      ></iframe>
+        style="display: none; visibility: hidden"
+        title="Google Tag Manager"></iframe>
     </noscript>
 
     <div id="root"></div>

@@ -41,7 +41,11 @@ export function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className='flex items-center gap-2'>
-              <img src='/icon.webp' alt='MangaLab Icon' className='h-10 w-10' />
+              <img
+                src='/icon-manga2.png'
+                alt='MangaLab Icon'
+                className='h-10 w-10'
+              />
               <span className='text-white font-black text-xl hidden sm:block'>
                 MangaLab
               </span>

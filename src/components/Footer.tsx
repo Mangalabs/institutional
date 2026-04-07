@@ -23,20 +23,18 @@ export function Footer({ onNavigate }: FooterProps) {
   }
 
   return (
-    
     <motion.footer
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
       className='bg-[#0f2819] border-t border-[#2B5B3F]/30'>
-        
       <div className='max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10'>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8'>
           <div className='space-y-3'>
             <div className='flex items-center gap-2'>
               <img
-                src='/icon.webp'
+                src='/icon-manga2.png'
                 alt={`${brand.name} logo`}
                 className='w-9 h-9 sm:w-10 sm:h-10'
               />
