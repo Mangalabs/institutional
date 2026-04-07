@@ -11,8 +11,8 @@ export const contactData = {
     {
       icon: Phone,
       title: 'WhatsApp',
-      content: '(41) 98730-6000',
-      href: 'https://wa.me/5541987306000',
+      content: '(85) 99296-1295',
+      href: 'https://tintim.link/whatsapp/92686307-95f3-4968-9a39-4de9891fa388/1538f4d0-5dbc-4ed3-82ed-00d06c625b64',
     },
   ],
   mapPlaceholder: {
