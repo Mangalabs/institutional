@@ -42,13 +42,14 @@ export function Navbar() {
               whileTap={{ scale: 0.95 }}
               className='flex items-center gap-2'>
               <img
-                src='/icon-manga2.png'
+                src='/icon-manga.webp'
                 alt='MangaLab Icon'
-                className='h-10 w-10'
+                className='h-12 w-12'
               />
               <span className='text-white font-black text-xl hidden sm:block'>
-                MangaLab
+                Manga <span className='text-[#E9972D]'>Lab</span>
               </span>
+
             </motion.div>
           </Link>
 

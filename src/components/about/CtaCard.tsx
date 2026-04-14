@@ -24,7 +24,7 @@ export function CtaCard({ cta, index, onClick }: CtaCardProps) {
       }}
       className='relative group'>
       <div className='relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border-2 border-white/20 rounded-3xl p-10 sm:p-12 h-full flex flex-col'>
-        <div className='text-6xl mb-6'>{cta.emoji}</div>
+        {/* <div className='text-6xl mb-6'>{cta.emoji}</div> */}
         <h3 className='text-3xl sm:text-4xl font-black text-white mb-4'>
           {cta.title}
         </h3>

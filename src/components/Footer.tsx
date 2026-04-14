@@ -1,24 +1,20 @@
 import { motion } from 'framer-motion'
 import { footerData } from '../data/footerData'
 import { MapPin } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
-interface FooterProps {
-  onNavigate: (page: string) => void
-}
-
-export function Footer({ onNavigate }: FooterProps) {
+export function Footer() {
   const year = new Date().getFullYear()
   const { brand, socialLinks, copyright } = footerData
 
   const footerLinks = {
     Empresa: [
-      { label: 'Sobre', page: 'sobre' },
-      { label: 'Academy', page: 'investir' },
-      { label: 'Projetos', page: 'projetos' },
+      { label: 'Sobre', path: '/about' },
+      { label: 'Projetos', path: '/projects' },
     ],
     Serviços: [
-      { label: 'Landing Pages', page: 'landing-pages' },
-      { label: 'Projetos Customizados', page: 'projetos' },
+      { label: 'Landing Pages', path: '/landing-pages' },
+      { label: 'Projetos Customizados', path: '/projects' },
     ],
   }
 
@@ -34,9 +30,9 @@ export function Footer({ onNavigate }: FooterProps) {
           <div className='space-y-3'>
             <div className='flex items-center gap-2'>
               <img
-                src='/icon-manga2.png'
+                src='/icon-manga.webp'
                 alt={`${brand.name} logo`}
-                className='w-9 h-9 sm:w-10 sm:h-10'
+                className='w-16 h-16 sm:w-18 sm:h-18'
               />
               <span className='text-white font-black text-lg sm:text-xl'>
                 {brand.name.split(brand.highlight)[0]}
@@ -60,11 +56,11 @@ export function Footer({ onNavigate }: FooterProps) {
               <ul className='space-y-1.5 sm:space-y-2'>
                 {links.map((link) => (
                   <li key={link.label}>
-                    <button
-                      onClick={() => onNavigate(link.page)}
+                    <Link
+                      to={link.path}
                       className='text-white/60 hover:text-[#E9972D] transition-colors duration-200 text-xs sm:text-sm'>
                       {link.label}
-                    </button>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -84,7 +80,8 @@ export function Footer({ onNavigate }: FooterProps) {
                   whileTap={{ scale: 0.95 }}
                   className='w-8 h-8 sm:w-9 sm:h-9 bg-white/10 hover:bg-[#E9972D] rounded-lg flex items-center justify-center text-white transition-colors duration-300'
                   aria-label={label}
-                  target='_blank'>
+                  target='_blank'
+                  rel='noopener noreferrer'>
                   <Icon size={15} className='text-white' />
                 </motion.a>
               ))}
