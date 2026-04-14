@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mangalab.com.br/sitemap.xml
+Sitemap: https://www.mangalab.io/sitemap.xml

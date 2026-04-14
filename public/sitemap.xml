@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mangalab.com.br/</loc>
+    <loc>https://www.mangalab.io/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
-    <loc>https://mangalab.com.br/projects</loc>
+    <loc>https://www.mangalab.io/projects</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://mangalab.com.br/landing-pages</loc>
+    <loc>https://www.mangalab.io/landing-pages</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://mangalab.com.br/about</loc>
+    <loc>https://www.mangalab.io/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
